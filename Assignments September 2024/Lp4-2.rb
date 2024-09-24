@@ -8,32 +8,20 @@ puts "Height of package: "
 d = gets.chomp.to_f
 e = (b * c) * d
 
+puts "The weight is: " + a.to_s + " cm"
+puts "The length is: " + b.to_s + " cm"
+puts "The width is: " + c.to_s + " cm"
+puts "The height is: " + d.to_s + " cm"
+puts "The size of the package is: " + e.to_s + " cm"
+
 if a > 27
-    f = 1
+    puts "The package is too heavy"   
 elsif a < 27
-    f = 2
-end
-if e > 100000
-    g = 1
-elsif e < 100000
-    g = 2
-end
-a = a.to_s
-b = b.to_s
-c = c.to_s
-d = d.to_s
-puts "The weight is: " + a
-puts "The length is: " + b
-puts "The width is: " + c
-puts "The height is: " + d
-h = f + g
-if h = 2
-    puts "Too heavy and too big"
-elsif h 
-    puts "The package is too heavy"
-elsif h
-    puts "The package is too big"
-else
-    puts "The package fits"
+    puts "The packages weight is within limits."
 end
 
+if e > 100000
+    puts "The package is too big"
+elsif e < 100000
+    puts "The package fits within the size requirements"
+end
