@@ -1,11 +1,9 @@
 puts "First time in military time"
-a = gets.chomp
+a = gets.chomp.to_f
 puts "Second time in military time"
-b = gets.chomp
-a = a.to_f
-b = b.to_f
+b = gets.chomp.to_f
+a = a / 100
+b = b / 100
 c = a - b
-d = c / 60
-d = d * -1
-d = d.to_s
-puts "Time difference is: " + d
+
+puts "Time difference is: " + c.to_s 

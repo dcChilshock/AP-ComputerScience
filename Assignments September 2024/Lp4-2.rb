@@ -1,14 +1,14 @@
-puts "Weight of package: "
+puts "Weight of package in kg: "
 a = gets.chomp.to_f
-puts "Length of package: "
+puts "Length of package in cm"
 b = gets.chomp.to_f
-puts "Width of package: "
+puts "Width of package in cm"
 c = gets.chomp.to_f
-puts "Height of package: "
+puts "Height of package in cm"
 d = gets.chomp.to_f
 e = (b * c) * d
 
-puts "The weight is: " + a.to_s + " cm"
+puts "The weight is: " + a.to_s + " kg"
 puts "The length is: " + b.to_s + " cm"
 puts "The width is: " + c.to_s + " cm"
 puts "The height is: " + d.to_s + " cm"

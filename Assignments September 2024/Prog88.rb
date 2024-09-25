@@ -20,17 +20,10 @@ else
     max = b
     min = a
 end
-sum = sum.to_s
-difference = difference.to_s
-product = product.to_s
-average = average.to_s
-absolute = absolute.to_s
-max = max.to_s
-min = min.to_s
-puts "The sum is:" + sum
-puts "The difference is:"+ difference
-puts "The product is:"+ product
-puts "The average is:"+ average
-puts "The absolute is:"+ absolute
-puts "The max is:"+ max 
-puts "The min is:"+ min
+puts "The sum is:" + sum.to_s
+puts "The difference is:"+ difference.to_s
+puts "The product is:"+ product.to_s
+puts "The average is:"+ average.to_s
+puts "The absolute is:"+ absolute.to_s
+puts "The max is:"+ max.to_s
+puts "The min is:"+ min.to_s

@@ -10,9 +10,9 @@ saved = saved.to_f
 intrest = intrest.to_f
 compound = compound.to_f
 days = days.to_f
-intrestearned = saved * ((1+((0.01*intrest)/compound))**((compound*days)/365.0))
-hehehe = intrestearned - saved
-hehehe = hehehe.to_s
-intrestearned = intrestearned.to_s
-puts "Here is the total amount with intrest:" + intrestearned
-puts "This is the compound intrest earned:" + hehehe
+intrest = saved * ((1+((0.01*intrest)/compound))**((compound*days)/365.0))
+compound = intrest - saved
+compound = compound.to_s
+intrest = intrest.to_s
+puts "Here is the total amount with intrest:" + intrest
+puts "This is the compound intrest earned:" + compound
