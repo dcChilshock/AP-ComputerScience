@@ -65,10 +65,13 @@ ___
 
 # 1. Compiling and Running
 
-???
+For Ruby you need the filenames to end with:
 
+filename **.rb**
 
+You may need to import ruby into the program, depending what you are working in.
 
+(Note to self: This feels incomplete work on it more)
 
 
 ___
@@ -79,9 +82,47 @@ ___
 
 # 2. Data Types
 
-???
+Data Types in ruby are: 
+* Strings
 
-```LANGUAGE_HERE
+Strings are defined as text, typed words or something to be printed out. There are two types of quotation marks that can will hold strings. The most common are double quotation marks, but single quotation marks do work but are different.
+```ruby
+var = 10 
+var.to_s #Conversion to string 
+#(var = var.to_s also works)
+
+puts "This is a string" 
+#Allows substitutions and backslash notation.
+
+puts 'This is also a string' 
+#Doesn't allow substitutions and backslash notation.
+```
+* Integers
+
+Integers holds data of numbers that don't go into fractions or decimals.
+```ruby
+
+```
+* Floats
+
+Floats holds data of numbers that have decimals, opposite of the integer data type. 
+```ruby
+
+```
+* Booleans
+```ruby
+
+```
+* Hashes
+```ruby
+
+```
+* Arrays
+```ruby
+
+```
+* Symbols
+```ruby
 
 ```
 
