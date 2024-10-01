@@ -1,16 +1,18 @@
 puts "First resistence is"
-one = gets.chomp.to_f
-one = one / 100000
+a = gets.chomp.to_f
 puts "Second resistence is"
-two = gets.chomp.to_f
-two = two / 100000
+b = gets.chomp.to_f
 puts "Third resistence is"
-three = gets.chomp.to_f
-three = three / 100000
+c = gets.chomp.to_f
 puts "Volatage: "
-four = gets.chomp.to_f
-
+d = gets.chomp.to_f
+three = d / a
+two = d / b
+one = d / c 
 resistence = one + two + three
-r = four / resistence
+r = d / resistence
 puts "The resistence is: " + r.to_s 
+puts one.to_s
+puts two.to_s
+puts three.to_s
 
