@@ -96,32 +96,109 @@ puts "This is a string"
 
 puts 'This is also a string' 
 #Doesn't allow substitutions and backslash notation.
+puts var
+#shows how the conversion would work
 ```
-* Integers
+
+Output should come to:
+
+```
+This is a string
+This is also a string
+10
+```
+
+* Integers and Floats
 
 Integers holds data of numbers that don't go into fractions or decimals.
-```ruby
-
-```
-* Floats
 
 Floats holds data of numbers that have decimals, opposite of the integer data type. 
-```ruby
 
+```ruby
+vari = 10 #Integer
+varf = 10.7 #Float
+#Ints and Floats can be multiplied together 
+#(makes the output a float)
+
+var = vari * varf #10 * 10.7
+puts "var = " + var.to_s
 ```
+
+Output
+
+```ruby
+var = 107
+```
+
 * Booleans
+
+Booleans only represent a tiny bit of information.
+
+True or false
+```ruby
+#Also known as simple if then statements.
+
+if true
+    puts "It is true."
+else
+    puts "It is false."
+end
+
+if nil
+    puts "nil is true"
+else
+    puts "nil is false"
+end
+
+if 0
+    puts "0 is true"
+else
+    puts "0 is false"
+end
+```
+
+Output
+
 ```ruby
 
 ```
+
 * Hashes
+
+The simplest way to describe hashes is to assign a value to a key press. In ruby a hash is treated like a literal object and they are similar to arrays.
+
 ```ruby
+#Hashes data type
+#!/usr/bin/ruby
+hsh  = colors = {"red" => 0xf00, "green" => 0x0f0, "blue" => 0x00f}
+hsh.each do |key, value| 
+ print key, " is ", value, "\n"
+end
+#I do not know if this is correct at like at all.
+```
+
+Output
 
 ```
+red is 3840
+green is 240
+blue is 15
+```
+
 * Arrays
 ```ruby
 
 ```
+Output
+```ruby
+
+```
+
 * Symbols
+```ruby
+
+```
+Output
 ```ruby
 
 ```
