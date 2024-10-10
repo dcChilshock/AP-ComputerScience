@@ -134,34 +134,7 @@ var = 107
 
 Booleans only represent a tiny bit of information.
 
-True or false
-```ruby
-#Also known as simple if then statements.
-
-if true
-    puts "It is true."
-else
-    puts "It is false."
-end
-
-if nil
-    puts "nil is true"
-else
-    puts "nil is false"
-end
-
-if 0
-    puts "0 is true"
-else
-    puts "0 is false"
-end
-```
-
-Output
-
-```ruby
-
-```
+Basically just ones and zeros. True and false.
 
 * Hashes
 
