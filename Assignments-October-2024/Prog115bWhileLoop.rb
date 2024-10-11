@@ -1,9 +1,8 @@
-var = 0
-a = var
-b = []
-while var > 36
+var = 2
+x = 1
+nums = ["2"]
+while var < 36
     var = var + 2
-    a = var
-    b << a.to_s
+    nums.push(var.to_s)
 end
-puts b.inspect
+print nums
