@@ -16,4 +16,4 @@ for a in 1..20 do
     a = num.to_s+"      "+square.to_s+"        "+root.to_s+"       "+cube.to_s+"       "+fourth.to_s+"."
     print a
     print "\n"
-end 
+end
