@@ -163,33 +163,61 @@ blue is 15
 Arrays are akin to lists, you can store many seperate variables.
 Here is how you can use them in ruby. 
 ```ruby
-array = ["megaman", "starwars", "godzilla"] #this array is 0, 1, 2
-sharks.length #will return the number elements not the index
+
+array = ["megaman", "starwars", "godzilla"] 
+#this array is 0, 1, 2
+
+array.length #will return the number elements not the index
+
 #3 ways to add elements 
+
 array[3] = "whale" #this would be 3
 array.push("Helloo") #4
 array << "Book" #5
 sharks.unshift("demon") #Add element to the beginning of the array. 
+
+#demon, megaman, starwars, godzilla, whale, Helloo, Book
+
 #also would increase the index for all the other elements by 1
 
 #if you skip a index in the array it will create a "nil" in the index
+
 #so if you enter "final" at index 7 the space between godzilla and final will be filled with nils
 
-#get the last element in the array
+#print the last element in the array
+
 print array[-1] 
-#also, first and last methods
+
+#also, another way to get first and last of the array method
+
 puts array.first
 puts array.last
+
 #find the placement of a certain element in the array
 #if you try to find an element that does not exist it will return a nil
+
 print array.index("starwars")
 
 #delete things from arrays
+
 array.delete("godzilla")
 array.delete_at(0) #0 = first element
-array.pop #will remove the last element in the array
-array.shift #will remove the first element in the array
+array.pop 
+#will remove the last element in the array
+array.shift 
+#will remove the first element in the array
 #arrays can hold other arrays aka nested arrays
+puts "\n"
+#megaman starwars, whale is left
+
+array.each
+
+array.each_do |array|
+  put array
+end
+
+
+puts "\n"
 nested =[
   [#array 1
     "kick",
@@ -199,15 +227,31 @@ nested =[
     "run",
     "jump",
   ]
+
   #to access values in nested arrays
+
   print nested[1][0]
+
   # [1] = the second array (since 0 is first)
   # [0] = the first element in the second array, run
   # [0][1] would be kick
+  print array
 ]
 ```
-Output
+Output of arrays
 ```ruby
+3
+"Book"
+"demon"
+"Book"
+3
+
+"megaman"
+"starwars"
+"whale"
+
+"run"
+["megaman", "starwars", "whale"]
 
 ```
 
