@@ -165,31 +165,33 @@ Here is how you can use them in ruby.
 ```ruby
 
 array = ["megaman", "starwars", "godzilla"] 
-#this array is 0, 1, 2
+#megaman index is = 0, starwars = 1, and so on 
 
-array.length #will return the number elements not the index
+array.length 
+#will return the length of the array, the length is one less than the last index
 
 #3 ways to add elements 
 
+#specific element placement
 array[3] = "whale" #this would be 3
+
+#both would be add it to the back of the array
 array.push("Helloo") #4
 array << "Book" #5
-sharks.unshift("demon") #Add element to the beginning of the array. 
+
+sharks.unshift("demon") \
+#Add element to the beginning of the array. 
 
 #demon, megaman, starwars, godzilla, whale, Helloo, Book
 
-#also would increase the index for all the other elements by 1
-
 #if you skip a index in the array it will create a "nil" in the index
 
-#so if you enter "final" at index 7 the space between godzilla and final will be filled with nils
+#so if you enter "final" at index 8 the space between Book(index 6) and final will be filled with nils
 
 #print the last element in the array
-
 print array[-1] 
 
-#also, another way to get first and last of the array method
-
+#how to get first and last elements of the array method
 puts array.first
 puts array.last
 
