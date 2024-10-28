@@ -258,12 +258,20 @@ Output of arrays
 ```
 
 * Symbols
+Definded as a light weight string.
 ```ruby
+domains = {:sk => "Hello", :no => "Hi", :hu => "Greetings"}
+ 
+puts domains[:sk]
+puts domains[:no]
+puts domains[:hu]
 
 ```
 Output
 ```ruby
-
+Hello
+Hi
+Greetings
 ```
 
 
