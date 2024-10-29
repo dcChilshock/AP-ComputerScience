@@ -1,6 +1,6 @@
 puts "Insert a number between 1-10,000"
 n = gets.chomp.to_i
-#find prime factors of a nuumber so 10
+#find prime factors of a number so 10
 array = []
 p = 2
 o = 0
