@@ -98,6 +98,7 @@ puts 'This is also a string'
 #Doesn't allow substitutions and backslash notation.
 puts var
 #shows how the conversion would work
+puts var.length
 ```
 
 Output should come to:
@@ -106,6 +107,8 @@ Output should come to:
 This is a string
 This is also a string
 10
+#this is the length
+2
 ```
 
 * Integers and Floats
