@@ -45,25 +45,25 @@ rule =[
     "|---|-------|---------|---------|---------|---|"
 ]
 questions = [
-    "|---|-------|---------|---------|---------|---|",
+    "|---|-------|---------|---------|---------|---|", #0
     "|---|-------|-----Questions-----|---------|---|",
-    "|---|   1   |    2    |    3    |    4    |---|",
-    "| ! | Games | History | Culture | Pokemon | ! |",
+    "|---|---a---|----b----|----c----|----d----|---|",
+    "|-!-| Games | History | Culture | Pokemon |-!-|",
     "|---|-------|---------|---------|---------|---|", 
-    "| a |  100  |   100   |   100   |   100   | a |",
+    "|-1-|  100  |   100   |   100   |   100   |-1-|", #5
     "|---|-------|---------|---------|---------|---|", 
-    "| b |  200  |   200   |   200   |   200   | b |",
+    "|-2-|  200  |   200   |   200   |   200   |-2-|", #7
     "|---|-------|---------|---------|---------|---|", 
-    "| c |  300  |   300   |   300   |   300   | c |",
+    "|-3-|  300  |   300   |   300   |   300   |-3-|", #9
     "|---|-------|---------|---------|---------|---|", 
-    "| d |  400  |   400   |   400   |   400   | d |",
+    "|-4-|  400  |   400   |   400   |   400   |-4-|", #11
     "|---|-------|---------|---------|---------|---|",
-    "|---|          Current Score:             |---|",
+    "|---|          Current Score:             |---|", #13
     "|---|-------|---------|---------|---------|---|"
 ]
 column = [
     "|---|-------|---------|---------|---------|---|",
-    "|---|----|What question do you desire|----|---|",
+    "|---|----| What column do you desire |----|---|",
     "|---|-------|---------|---------|---------|---|",
 ]
 row = [
@@ -72,24 +72,28 @@ row = [
     "|---|-------|---------|---------|---------|---|",
 ]
 a = [
-    "|-!-|-----What is Winner of GOTY 2022-----|-!-|",
+    "Zero is not a column", #0
+    "|-!-|-----What is Winner of GOTY 2022-----|-!-|", #Elden ring, 1
     "",
     "",
     ""
 ]
 b = [
+    "Zero is not a column", #0
     "",
     "",
     "",
     ""
 ]
 c = [
+    "Zero is not a column", #0
     "",
     "",
     "",
     ""
 ]
 d = [
+    "Zero is not a column", #0
     "",
     "",
     "",
@@ -102,18 +106,32 @@ gameover = [
 ]
 puts intro
 answer = gets.chomp
-until amount = 16 do
+if answer == "Y"
+    puts y
+    sleep 5
+    puts rules
+    sleep 5
+    puts questions 
+    sleep 5
+elsif answer == "N"
+    puts n
+end
+
+until amount == 16 do
     if answer == "Y"
-        puts y
-        sleep 5
-        puts rules
-        sleep 5
-        puts questions 
-        sleep 2
-        puts quest
-        var = gets.chomp
-        if 
-    elsif answer == "N"
-        puts n
+        puts column
+        var = gets.chomp #a
+        puts row
+        gar = gets.chomp.to_i #1
+        if var == "a"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts a[gar]
+            puts "|---|-------|---------|---------|---------|---|"
+        elsif var == "b"
+        elsif var == "c"
+        elsif var == "d"
+        end
+    else
     end
+    amount = amount + 1
 end
