@@ -303,12 +303,49 @@ ___
 
 # 4. Arithmetic Operations
 
-???
+Arithmetic operations or math in ruby is like many other coding languages.
+Just a little different.
 
+Addition / Subtraction
 
+Input
+```ruby
+x = 10
+y = 5
+#Regular addition
+z = x + y
+puts z.to_s
 
+#You can also do this
+x = x + 5 
+#Useful for loops or needing to update the variable using its current value
+```
+Output
+```ruby
+15
+```
+Multiplication / Division
 
+Input
+```ruby
+x = 10
+y = 5
 
+z = x * y
+puts z.to_s
+```
+Output
+```ruby
+50
+```
+Modulus / Exponent 
+
+Input
+```ruby
+```
+Output
+```ruby
+```
 ___
 
 
