@@ -128,16 +128,6 @@ def game
         "|---|-------|  GAME.  |  OVER.  |---------|---|",
         "|---|-------|---------|---------|---------|---|"
     ]
-    def variable(var)
-        if var == "a"
-            
-        elsif var == "b"
-        
-        elsif var == "c"
-        
-        elsif var == "d"
-        end 
-
     puts intro
     sleep 5
     puts rule
@@ -313,17 +303,6 @@ def game
         end
         puts "|---|-------|-Score: " + score.to_s + " -------|---------|---|"
         amount = amount + 1
-        puts "Do you desire to stop the game? yes or no?"
-        r = gets.chomp
-        if r == "yes"
-            amount = 16
-        else 
-            amount = amount
-        end 
-        if score > 1000
-            puts "You win!!"
-        elsif score < 1000
-            puts "Ha loser."
         end
     end
 end
