@@ -35,7 +35,7 @@ rules = [
 ]
 
 rule =[
-    "|---|-------|---------|---------|---------|---|",
+    "|---|-------|---------|---------|---------|---|",#This 
     "|------------- Here are the Rules ------------|",
     "|----Their are scores from 100-400 points.----|",
     "|---The more points the harder the question---|",
@@ -67,25 +67,25 @@ multi = [
     "A: Pre-sequal B: BL 2 C: BL 1 D: BL 3", #400 - 4 #B is right
 ]
 multi2 = [
-    "Zero isnt an option you get no points. lol",
-    "A: B: C: D:",
-    "A: B: C: D:",
-    "A: B: C: D:",
-    "A: B: C: D:" #400 - 8
+    "Zero isnt an option you get no points. lol", #History 
+    "A:Y2K B:DustBowl C:murder of Franz Ferdinand D:Vaporeon copypasta", #C is correct
+    "A:Mark B:Pryamids C:Aliens D:Humans", #Mark/A is correct
+    "A:Cannablism B:? C:Diddy D:Stabing", #Cannablism is correct 
+    "A:20% B:99% C:60% D:70%" #4 #99% or A
     ]
 multi3 = [
-    "Zero isnt an option you get no points. lol",
-    "A: B: C: D:",
-    "A: B: C: D:",
-    "A: B: C: D:",
-    "A: B: C: D:", #400 - 8
+    "Zero isnt an option you get no points. lol", #Culture 
+    "A:Mistborn B:Harry potter C:WOK D:ACOTAR", #Mistborn is correct
+    "A:Vaporeon copypasta B:solider copypasta C:bodypillow D:fedora", #Vaporeon copypasta
+    "A:YES! B:NO:( C:Why D:ALL!", #Yes is correct
+    "A:Why B:How C:How is this trivia? D:Help", #4 #D is correct
     ]
 multi4 = [
-    "Zero isnt an option you get no points. lol",
-    "A: B: C: D:",
-    "A: B: C: D:",
-    "A: B: C: D:",
-    "A: B: C: D:", #400 - 8
+    "Zero isnt an option you get no points. lol", #Pokemon
+    "A:incineroar B:incineroar C:incineroar D:ALL", #D/ALl is correct
+    "A:Vapeoren B:Typloshion C:Pikachu D:Munchlax", #B is correct
+    "A:Metagross B:Dragonite C:Flygon D:Septile", #Flygon is correct
+    "A:What B:death C:backflip D:strike", #4 #Death is correct
     ]
 ]
 column = [
@@ -107,24 +107,24 @@ a = [
 ]
 b = [
     "Zero is not a column", #0
-    "",
-    "",
-    "",
-    ""
+    "|-!-|-------What event started a war.-----|-!-|",
+    "|-!-|-------Who made the pyraminds.-------|-!-|",
+    "|-!-|--What is mrbeast being accused of.--|-!-|",
+    "|-!-|------Employment rate of skyrim------|-!-|"
 ]
 c = [
     "Zero is not a column", #0
-    "",
-    "",
-    "",
-    ""
+    "|---|-----Whats the best fantasy book-----|---|",
+    "|---|--------What is the weirdiest--------|---|",
+    "|---|-----------Do a backflip-------------|---|",
+    "|---|------------I am imploding-----------|---|"
 ]
 d = [
     "Zero is not a column", #0
-    "",
-    "",
-    "",
-    ""
+    "|---|------What is the best pokemon.------|---|",
+    "|---|----------Weirdest pokemon-----------|---|",
+    "|---|----------The best pokemon-----------|---|",
+    "|---|-----AHHHHHHHHHHHHHHHHHHHHHHHHHH-----|---|"
 ]
 gameover = [
     "|---|-------|---------|---------|---------|---|",
