@@ -23,7 +23,7 @@ n = [
     "|---|-------|---------|---------|---------|---|",
     "|---|WHY ARE|   YOU   |EVEN HERE|  THEN?  |---|",
     "|---|-------|---------|---------|---------|---|"
-    ]
+]
 
 rules = [
     "|---|-------|---------|---------|---------|---|",
@@ -31,8 +31,7 @@ rules = [
     "|-!-|  If you Forget the Rules then       |-!-|",
     "|-!-|     type RULES in the console.      |-!-|",
     "|-!-|             Have Fun                |-!-|",
-    "|---|-------|---------|---------|---------|---|"
-]
+    "|---|-------|---------|---------|---------|---|"]
 
 rule =[
     "|---|-------|---------|---------|---------|---|",#This 
@@ -42,8 +41,7 @@ rule =[
     "|--To pick a question type the column first.--|",
     "|------------ Then the row second. -----------|",
     "|----------Example: a1 = games 100.-----------|",
-    "|---|-------|---------|---------|---------|---|",
-]
+    "|---|-------|---------|---------|---------|---|"]
 questions = [
     "|---|-------|---------|---------|---------|---|", #0
     "|---|-------|-----Questions-----|---------|---|",
@@ -57,15 +55,14 @@ questions = [
     "|-3-|  300  |   300   |   300   |   300   |-3-|", #9
     "|---|-------|---------|---------|---------|---|", 
     "|-4-|  400  |   400   |   400   |   400   |-4-|", #11
-    "|---|-------|---------|---------|---------|---|"
-]
+    "|---|-------|---------|---------|---------|---|"]
 multi = [
     "Zero isnt an option you get no points. lol",
     "A:elden-ring B:TOTK C:GOWR D:Witcher", #Elden ring is right
     "A:1 year B:3 year C:10 year D:5 year", #Five years is correct
     "A:Knack B:Oblivion C:Fortnite D:WOW", #Oblivion is right
     "A: Pre-sequal B: BL 2 C: BL 1 D: BL 3", #400 - 4 #B is right
-]
+    ]
 multi2 = [
     "Zero isnt an option you get no points. lol", #History 
     "A:Y2K B:DustBowl C:murder of Franz Ferdinand D:Vaporeon copypasta", #C is correct
@@ -82,21 +79,21 @@ multi3 = [
     ]
 multi4 = [
     "Zero isnt an option you get no points. lol", #Pokemon
-    "A:incineroar B:incineroar C:incineroar D:ALL", #D/ALl is correct
+    "A:incineroar B:incineroar C:incineroar D:ALL", #D/ALl is correct 
     "A:Vapeoren B:Typloshion C:Pikachu D:Munchlax", #B is correct
     "A:Metagross B:Dragonite C:Flygon D:Septile", #Flygon is correct
     "A:What B:death C:backflip D:strike", #4 #Death is correct
     ]
-]
+
 column = [
     "|---|-------|---------|---------|---------|---|",
     "|---|----| What column do you desire |----|---|",
-    "|---|-------|---------|---------|---------|---|",
+    "|---|-------|---------|---------|---------|---|"
 ]
 row = [
     "|---|-------|---------|---------|---------|---|",
     "|---|       What row do you desire        |---|",
-    "|---|-------|---------|---------|---------|---|",
+    "|---|-------|---------|---------|---------|---|"
 ]
 a = [
     "Zero is not a column", #0
@@ -137,154 +134,173 @@ puts rule
 answer = gets.chomp
 if answer == "Y"
     puts y
-    sleep 5
-    puts rules
-    sleep 5
-    puts questions 
-    sleep 5
 elsif answer == "N"
     puts n
 end
 
 until amount == 16 do
-    if amount > 1
-        puts column
-        var = gets.chomp #a
-        puts row
-        gar = gets.chomp.to_i
-    else
-        if answer == "Y"
-            if var == "a"
-                puts "|---|-------|---------|---------|---------|---|"
-                puts a[gar]
-                puts "|---|-------|---------|---------|---------|---|"
-                puts "|-!-|-------|What is your answer|---------|-!-|"
-                puts "|---|-------|---------|---------|---------|---|"
-                puts "|---|" + multi[gar] + "|---|"
-                puts "|---|-------|---------|---------|---------|---|"
-                ask = gets.chomp
-                if gar == 1
-                    if ask == a
-                        score = score + 100
-                        puts "|---|-------|-------RIGHT-------|---------|---|"
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 2
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 3
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 4
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
+    puts questions
+    sleep 5
+    puts column
+    var = gets.chomp #a
+    puts row
+    gar = gets.chomp.to_i
+    if answer == "Y"
+        if var == "a"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts a[gar]
+            puts "|---|-------|---------|---------|---------|---|"
+            puts "|-!-|-------|What is your answer|---------|-!-|"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts "|---|" + multi[gar] + "|---|"
+            puts "|---|-------|---------|---------|---------|---|"
+            ask = gets.chomp
+            if gar == 1
+                if ask == "a"
+                    score = score + 100
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
                 end
-            elsif var == "b"
-                puts "|---|-------|---------|---------|---------|---|"
-                puts a[gar]
-                puts "|---|-------|---------|---------|---------|---|"
-                puts "|-!-|-------|What is your answer|---------|-!-|"
-                puts "|---|-------|---------|---------|---------|---|"
-                puts "|---|" + multi[gar] + "|---|"
-                puts "|---|-------|---------|---------|---------|---|"
-                ask = gets.chomp
-                if gar == 1
-                    if ask == a
-                        score = score + 100
-                        puts "|---|-------|-------RIGHT-------|---------|---|"
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 2
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 3
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 4
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
+            elsif gar == 2
+                if ask == "d"
+                    score = score + 200
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
                 end
-            elsif var == "c"
-                puts "|---|-------|---------|---------|---------|---|"
-                puts a[gar]
-                puts "|---|-------|---------|---------|---------|---|"
-                puts "|-!-|-------|What is your answer|---------|-!-|"
-                puts "|---|-------|---------|---------|---------|---|"
-                puts "|---|" + multi[gar] + "|---|"
-                puts "|---|-------|---------|---------|---------|---|"
-                ask = gets.chomp
-                if gar == 1
-                    if ask == a
-                        score = score + 100
-                        puts "|---|-------|-------RIGHT-------|---------|---|"
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 2
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 3
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 4
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
+            elsif gar == 3
+                if ask == "b"
+                    score = score + 300
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
                 end
-            elsif var == "d"
-                puts "|---|-------|---------|---------|---------|---|"
-                puts a[gar]
-                puts "|---|-------|---------|---------|---------|---|"
-                puts "|-!-|-------|What is your answer|---------|-!-|"
-                puts "|---|-------|---------|---------|---------|---|"
-                puts "|---|" + multi[gar] + "|---|"
-                puts "|---|-------|---------|---------|---------|---|"
-                ask = gets.chomp
-                if gar == 1
-                    if ask == a
-                        score = score + 100
-                        puts "|---|-------|-------RIGHT-------|---------|---|"
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 2
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 3
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
-                elsif gar == 4
-                    if
-                    else
-                        puts "|---|-------|-------WRONG-------|---------|---|"
-                    end
+            elsif gar == 4
+                if ask == "b"
+                    score = score + 400
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
                 end
             end
-        else
+        elsif var == "b"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts b[gar]
+            puts "|---|-------|---------|---------|---------|---|"
+            puts "|-!-|-------|What is your answer|---------|-!-|"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts "|---|" + multi2[gar] + "|---|"
+            puts "|---|-------|---------|---------|---------|---|"
+            ask = gets.chomp
+            if gar == 1
+                if ask == "c"
+                    score = score + 100
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 2
+                if ask == "a"
+                    score = score + 200
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 3
+                if ask == "a"
+                    score = score + 300
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 4
+                if ask == "b"
+                    score = score + 400
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            end
+        elsif var == "c"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts c[gar]
+            puts "|---|-------|---------|---------|---------|---|"
+            puts "|-!-|-------|What is your answer|---------|-!-|"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts "|---|" + multi3[gar] + "|---|"
+            puts "|---|-------|---------|---------|---------|---|"
+            ask = gets.chomp
+            if gar == 1
+                if ask == "a"
+                    score = score + 100
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 2
+                if ask == "a"
+                    score = score + 200
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 3
+                if ask == "a"
+                    score = score + 300
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 4
+                if ask == "d"
+                    score = score + 400
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            end
+        elsif var == "d"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts d[gar]
+            puts "|---|-------|---------|---------|---------|---|"
+            puts "|-!-|-------|What is your answer|---------|-!-|"
+            puts "|---|-------|---------|---------|---------|---|"
+            puts "|---|" + multi4[gar] + "|---|"
+            puts "|---|-------|---------|---------|---------|---|"
+            ask = gets.chomp
+            if gar == 1
+                if ask == "d" 
+                    score = score + 100
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 2
+                if ask == "b"
+                    score = score + 200
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 3
+                if ask == "c"
+                    score = score + 300
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            elsif gar == 4
+                if ask == "b"
+                    score = score + 400
+                    puts "|---|-------|-------RIGHT-------|---------|---|"
+                else
+                    puts "|---|-------|-------WRONG-------|---------|---|"
+                end
+            end
         end
-        puts "|---|-------|-Score: " + score + " -------|---------|---|"
-        amount = amount + 1
+    else
+    end
+    puts "|---|-------|-Score: " + score.to_s + " -------|---------|---|"
+    amount = amount + 1
 end
