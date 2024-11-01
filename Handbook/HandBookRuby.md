@@ -347,8 +347,27 @@ ___
 
 # 7. Decision Structures
 
-???
+decision structures are used to respond to something and make decisions, if this happens,then this will happen, type of thing.
 
+if :
+If statements are the simplist way to do it but the most limiting.
+```ruby
+```
+output
+```ruby
+```
+if else :
+```ruby
+```
+output
+```ruby
+```
+if elsif :
+```ruby
+```
+output
+```ruby
+```
 
 
 
@@ -431,7 +450,45 @@ ___
 
 # 13. Looping Structures
 
-???
+Looping structures are important to know in programming in general.
+
+They help you do tasks that require the same actions over and over again.
+So instead of copying and pasting the same code over and over again. Use a loop!
+
+While loops
+
+```ruby
+```
+
+output
+
+```ruby
+```
+
+For loops
+
+```ruby
+```
+
+Output
+
+```ruby
+```
+
+Do while loop
+
+```ruby
+```
+
+Output
+
+```ruby
+```
+
+Until Loop
+
+```ruby
+```
 
 
 
@@ -467,10 +524,7 @@ ___
 
 ## 15.1 Arrays/Lists
 
-
-Lists are
-
-Arrays are akin to lists, you can store many seperate variables.
+Arrays and lists are the same thing. you can store many seperate variables.
 Here is how you can use them in ruby. 
 ```ruby
 
