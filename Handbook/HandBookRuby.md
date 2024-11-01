@@ -342,9 +342,18 @@ Modulus / Exponent
 
 Input
 ```ruby
+x = 10
+y = 2
+
+z = x / 2 #Divide
+w = 5 % 2 #Mod
+
+puts z.to_s
+puts w.to_s
 ```
 Output
 ```ruby
+
 ```
 ___
 
