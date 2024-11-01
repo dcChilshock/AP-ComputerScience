@@ -161,105 +161,6 @@ green is 240
 blue is 15
 ```
 
-* Arrays
-
-Arrays are akin to lists, you can store many seperate variables.
-Here is how you can use them in ruby. 
-```ruby
-
-array = ["megaman", "starwars", "godzilla"] 
-#megaman index is = 0, starwars = 1, and so on 
-
-array.length 
-#will return the length of the array, the length is one less than the last index
-
-#3 ways to add elements 
-
-#specific element placement
-array[3] = "whale" #this would be 3
-
-#both would be add it to the back of the array
-array.push("Helloo") #4
-array << "Book" #5
-
-sharks.unshift("demon") \
-#Add element to the beginning of the array. 
-
-#demon, megaman, starwars, godzilla, whale, Helloo, Book
-
-#if you skip a index in the array it will create a "nil" in the index
-
-#so if you enter "final" at index 8 the space between Book(index 6) and final will be filled with nils
-
-#print the last element in the array
-print array[-1] 
-
-#how to get first and last elements of the array method
-puts array.first
-puts array.last
-
-#find the placement of a certain element in the array
-#if you try to find an element that does not exist it will return a nil
-
-print array.index("starwars")
-
-#delete things from arrays
-
-array.delete("godzilla")
-array.delete_at(0) #0 = first element
-array.pop 
-#will remove the last element in the array
-array.shift 
-#will remove the first element in the array
-#arrays can hold other arrays aka nested arrays
-puts "\n"
-#megaman starwars, whale is left
-
-array.each
-
-array.each_do |array|
-  put array
-end
-
-
-puts "\n"
-nested =[
-  [#array 1
-    "kick",
-    "punch",
-  ],
-  [#array 2
-    "run",
-    "jump",
-  ]
-
-  #to access values in nested arrays
-
-  print nested[1][0]
-
-  # [1] = the second array (since 0 is first)
-  # [0] = the first element in the second array, run
-  # [0][1] would be kick
-  print array
-]
-```
-Output of arrays
-```ruby
-3
-"Book"
-"demon"
-"Book"
-3
-
-"megaman"
-"starwars"
-"whale"
-
-"run"
-["megaman", "starwars", "whale"]
-
-```
-
 * Symbols
 Definded as a light weight string.
 ```ruby
@@ -289,7 +190,7 @@ ___
 
 # 3. Console I/O
 
-???
+??? (I have no idea what this means, searching it up doesnt help)
 
 
 
@@ -319,9 +220,11 @@ puts z.to_s
 #You can also do this
 x = x + 5 
 #Useful for loops or needing to update the variable using its current value
+puts x.to_s # x = 10 + 5
 ```
 Output
 ```ruby
+15
 15
 ```
 Multiplication / Division
@@ -331,29 +234,40 @@ Input
 x = 10
 y = 5
 
-z = x * y
+z = x * y #10 * 5
+w = x / y #10 / 5
 puts z.to_s
 ```
 Output
 ```ruby
 50
+2
 ```
 Modulus / Exponent 
 
 Input
 ```ruby
+
 x = 10
 y = 2
 
-z = x / 2 #Divide
-w = 5 % 2 #Mod
+#Exponent/power, exponenets do this to numbers. 
+
+#10**2 also means 10 * 10. 10**4 means 10 * 10 * 10 * 10 and so on.
+z = x ** 2 #This is x to the power of 2
+
+#Modulus finds the remainder
+
+w = 5 % 2 
+#this finds the remainder, so 2 goes into 5, 2 times. But 1 is still left over, so mode = 1
 
 puts z.to_s
 puts w.to_s
 ```
 Output
 ```ruby
-
+1
+100
 ```
 ___
 
@@ -363,12 +277,35 @@ ___
 
 # 5. Assignment Operations
 
-???
+Assignment Operations are used all the time in any coding language, and rubys arent that different from most languages.
+```ruby
+Operations
 
+Equal operator
+this means one thing is the same as another
+= or == 
+#<--this is used in if statements and things like it.(the rest of the operators can be used in if then statements and the like)
 
+Add and operator
+x += y
+#This is the same as x = x + y to 
 
+Subtract and operator
+x -= y
+#This is the same as x = x - y to 
 
+Multiply and operator
+x *= y
+#This is the same as x = x * y to
 
+Divide and operator
+x /= y
+#This is the same as x = x / y to 
+
+Exponent and operator
+x **= y
+#This is the same as x = x ** y to 
+```
 ___
 
 
@@ -377,8 +314,27 @@ ___
 
 # 6. Comments
 
-???
+Comments in programs are used to help you remeber what lines of code or a program does.
 
+It also helps other programers who might want to use your code.
+
+Comments are specifically ignored by the computer so what you write wont affect your code.
+
+In ruby comments are done like this
+```ruby
+# This is a comment in ruby
+
+#examples of how you would use comments
+z = 13
+y = 6
+x = z + y #adds z and y into the variable x.
+puts x.to_s
+#This is a really simple example of how to use comments. But it is an effective one.
+```
+Output
+```ruby
+19
+```
 
 
 
@@ -511,7 +467,105 @@ ___
 
 ## 15.1 Arrays/Lists
 
-???
+
+Lists are
+
+Arrays are akin to lists, you can store many seperate variables.
+Here is how you can use them in ruby. 
+```ruby
+
+array = ["megaman", "starwars", "godzilla"] 
+#megaman index is = 0, starwars = 1, and so on 
+
+array.length 
+#will return the length of the array, the length is one less than the last index
+
+#3 ways to add elements 
+
+#specific element placement
+array[3] = "whale" #this would be 3
+
+#both would be add it to the back of the array
+array.push("Helloo") #4
+array << "Book" #5
+
+sharks.unshift("demon") \
+#Add element to the beginning of the array. 
+
+#demon, megaman, starwars, godzilla, whale, Helloo, Book
+
+#if you skip a index in the array it will create a "nil" in the index
+
+#so if you enter "final" at index 8 the space between Book(index 6) and final will be filled with nils
+
+#print the last element in the array
+print array[-1] 
+
+#how to get first and last elements of the array method
+puts array.first
+puts array.last
+
+#find the placement of a certain element in the array
+#if you try to find an element that does not exist it will return a nil
+
+print array.index("starwars")
+
+#delete things from arrays
+
+array.delete("godzilla")
+array.delete_at(0) #0 = first element
+array.pop 
+#will remove the last element in the array
+array.shift 
+#will remove the first element in the array
+#arrays can hold other arrays aka nested arrays
+puts "\n"
+#megaman starwars, whale is left
+
+array.each
+
+array.each_do |array|
+  put array
+end
+
+
+puts "\n"
+nested =[
+  [#array 1
+    "kick",
+    "punch",
+  ],
+  [#array 2
+    "run",
+    "jump",
+  ]
+
+  #to access values in nested arrays
+
+  print nested[1][0]
+
+  # [1] = the second array (since 0 is first)
+  # [0] = the first element in the second array, run
+  # [0][1] would be kick
+  print array
+]
+```
+Output of arrays
+```ruby
+3
+"Book"
+"demon"
+"Book"
+3
+
+"megaman"
+"starwars"
+"whale"
+
+"run"
+["megaman", "starwars", "whale"]
+
+```
 
 
 
