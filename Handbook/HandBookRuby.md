@@ -352,21 +352,53 @@ decision structures are used to respond to something and make decisions, if this
 if :
 If statements are the simplist way to do it but the most limiting.
 ```ruby
+x = 1
+y = 0
+if x = 1 #if - [statement]
+   y = 5
+end #Signals the program that this is the end of the sequence
+
+puts y.to_s
 ```
 output
 ```ruby
+5
 ```
-if else :
+if else : If else statements are very alike to just if statements, but they have more conditions. 
 ```ruby
+x = 2
+y = 0
+if x = 1 #since x doesnt equal 1 it does the else line 
+   y = 5
+else #else allows for two possible outcomes instead of just one.
+   y = 1
+end
+puts y.to_s 
 ```
 output
 ```ruby
+1
 ```
-if elsif :
+if elsif : This decision structure just allows more possibilities.
 ```ruby
+x = 1
+z = 5
+t = 9
+y = 0
+if x = 4
+   y = 1
+elsif z = 5
+   y = 2
+elsif t = 6
+   y = 3
+end
+
+puts y.to_S
+
 ```
 output
 ```ruby
+2
 ```
 
 
@@ -380,7 +412,65 @@ ___
 
 # 8. Conditional Operators
 
-???
+< and >
+```ruby
+x = 5
+y = 3
+if x > y #If a number is greater than another number
+  return true
+else
+  return false
+end
+#and vice versa
+if x < y #If a number is less than another number 
+  return true
+else
+  return false
+```
+output
+```ruby
+true
+false
+```
+Less than or equal too and greater than or equal too
+or in simplier terms.
+
+<= and >=.
+```ruby
+x = 3
+y = 3
+if x >= y #If a number is greater than another or is EQUAL to each other 
+   return true
+else
+   return false
+end
+#and vice versa
+if x <= y #if a number is less than another number or is EQUAL to each other
+  return true
+else
+  return false
+end
+```
+output
+```ruby
+true
+true
+```
+Equal ==
+```ruby
+x = 5
+y = 3
+if x == y #If a number is equal to each other 
+   return true
+else
+   return false
+end 
+```
+output
+```ruby
+false
+```
+
 
 
 
@@ -394,7 +484,56 @@ ___
 
 # 9. Logic Operators
 
-???
+Logic operators are commonly called Boolean operators.
+True and false statements are booleans.
+
+The baics things that logic operators do are three things.
+
+And. Or. Not.
+
+And - &&
+```ruby
+x = 5
+y = 3
+if (x == 5) && (y == 3) #Only true if both sides of the equation is true 
+   return true
+else
+   return false
+end
+```
+output
+```ruby
+true
+```
+
+Or - ||
+```ruby
+x = 5
+y = 3
+if (x == 5) || (y == 4) #True if one of the statements are true. 
+   return true
+else
+   return false
+end
+```
+output
+```ruby
+true
+```
+Doesn't equal - !=
+```ruby
+x = 5
+y = 3
+if x != y #If a number is NOT equal to each other 
+   return true
+else
+   return false
+end
+```
+output
+```ruby
+true
+```
 
 
 
@@ -436,7 +575,25 @@ ___
 
 # 12. Random Generation
 
-???
+Generating random numbers is random
+
+```ruby
+Random.rand(10...42)
+#or
+rand(10...42)
+#This generates a random number between 10 and 42
+
+#if this doesnt work then try these
+
+rand #--> gives you a random number in a float
+
+rand(max) #max = the highest value youd want to randomly generate.
+Random.rand(max) #(is the correct way to use this)
+#this is an example of using this 
+10.times.map{ 20 + Random.rand(11) } #+20 allows the number to stay above a desired value, the 0-11 value is the random factor in this
+#=> [26, 26, 22, 20, 30, 26, 23, 23, 25, 22]
+
+```
 
 
 
@@ -458,38 +615,98 @@ So instead of copying and pasting the same code over and over again. Use a loop!
 While loops
 
 ```ruby
+x = 0 
+while x != 5 do #While x does not equal 5 it will keep looping
+  x += 1 #or x = x + 1
+  puts "hi"
+end
 ```
 
 output
 
 ```ruby
+hi #x = 0
+hi #x = 1
+hi #x = 2
+hi #x = 3
+hi #x = 4
 ```
 
 For loops
 
 ```ruby
+x = 0
+for i in 1..20 do #1..20 is the same as range in other code
+  x = x + 1 #or x += 1
+  puts x.to_s
+end
 ```
 
 Output
 
 ```ruby
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+... #you get it.
 ```
 
 Do while loop
 
 ```ruby
+#This one confuses me
+x = 0
+
+loop do
+  x += 1
+  puts "69"
+  if x == 5 #Boolean expression. Stops the code
+    puts "haha" 
+    break #Ends the loop?
+  end
+end
 ```
 
 Output
 
 ```ruby
+69
+69
+69
+69
+69
+haha
 ```
 
 Until Loop
 
 ```ruby
-```
+x = 0
 
+until x == 5 do
+  x += 1
+  puts "AHAHHAHHAHAH"
+end
+```
+Output
+```ruby
+AHAHHAHHAHAH
+AHAHHAHHAHAH
+AHAHHAHHAHAH
+AHAHHAHHAHAH
+AHAHHAHHAHAH
+```
 
 
 
