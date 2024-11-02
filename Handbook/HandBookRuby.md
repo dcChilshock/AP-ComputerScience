@@ -547,7 +547,7 @@ ___
 
 # 10. Advanced Decision Structures
 
-???
+??? I have no idea, this is the same as another topic
 
 
 
@@ -561,7 +561,32 @@ ___
 
 # 11. String Methods
 
-???
+String methods are methods that deal with strings, here are some
+
+```ruby
+variable = "Hi"
+name = "" #if there is even a space in the quote its still not technically 'empty'
+name.empty? #this is true
+
+"hello".slice(1,2) # gives "el"
+"hello".slice(1..2) # gives "ell"
+#or
+#[] is interchangable with slice
+"hello"[0] # gives "h" 
+
+"hello".chars # gives ["h", "e", "l", "l", "o"]
+variable.upcase #puts all chars to UPPER CASE
+variable.downcase #Puts all chars to lower case
+variable.capitalize #capitalizes the first char in the string
+variable.swapcase #switches the lowercase with uppercase, and uppercase with lowercase, so Hello -> hELLO
+"Hello, #{variable}!" #insert a variable into a string
+#Or just do this ()"Hello, " + variable + "!")
+
+#Even if we use capitalize, downcase and upcase. They dont modify the orgianl string, just modifies it in the instance its used I guess. 
+#Use this is modify the orginal string
+variable.upcase! #the '!' changes it 
+
+```
 
 
 
@@ -845,9 +870,41 @@ Output of arrays
 
 ## 15.2 Matrices
 
-???
+Matrices are grids of characters, kind of like an array.
 
+```ruby
 
+require 'matrix' #The matrix class is required to add matrix's
+
+matrix = [ # this is a matrix using an array
+#Best to show 2d data and a board game like chess
+  [1,2,3],
+  [4,5,6],
+  [7,8,9],
+]
+                    
+a = Matrix[[1,2,3], [4,5,6], [7,8,9]]  
+b = Matrix[[1,2,3], [4,5,6], [7,8,9]] #These matrixs are the same as the grid from before just flattened out.
+
+z = a + b #Matrix A + Matrix B, I assume it might work for other signs like **, *, /, -, % and the like.
+puts z
+
+#How to grab a individual value
+
+puts a[0,1]#(might need to convert the int to string first) 
+#0 = the first section. 1 = the second value of the first section
+
+#if you were using the grid version
+puts matrix[0][1] #Conversion to string might be neccesary
+
+#Remeber bjects in a matrix can be chagned, a new matrix needs to be created to change a value 
+```
+Output
+```ruby
+Matrix[[2, 4, 6], [8, 10, 12], [14, 16, 18]]
+2
+2
+```
 
 
 
