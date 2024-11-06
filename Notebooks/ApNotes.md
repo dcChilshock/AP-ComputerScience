@@ -4,7 +4,7 @@
 
     Lossless vs. Lossy Compression
 
-    Lossless compression:
+    Lossless compression: Textual data, compressed and then needs to be regained
     
     Lossy compression:
 
