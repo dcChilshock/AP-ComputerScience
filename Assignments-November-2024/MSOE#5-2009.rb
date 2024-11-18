@@ -2,7 +2,7 @@
 def primeint(x)
     if x == 1
         return false #Is not a prime number
-    elsif == 0
+    elsif x == 0
         return  false #Is not a prime number
     else
         i = x / X
@@ -10,12 +10,13 @@ def primeint(x)
             for n in 2..9+1 do
                 j = x / n
                 if (j % 1) == 0
-                    return false #Is not a prime number
+                    return "Not a prime number"
                     #break
                 else
-
+                    
                 end
         else
-            return false #Is not a prime number
+            return "Not a prime number" #Is not a prime number
         end
+    return "This is a prime number"
 end
