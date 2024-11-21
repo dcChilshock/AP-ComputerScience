@@ -21,8 +21,6 @@ string = input("input roman numerals: ")
 def reading(a):
     presum = 0 
     sum = 0
-    array = []
-    array2 = []
     previous = 0
     b = 0
     d = {
@@ -46,17 +44,32 @@ def reading(a):
             sum += d[a[i]]
         elif a[i] == "I":
             sum += d[a[i]]
-        if d[a[i]] > previous:
-            sum = presum
-            sum -= previous
+        print(str(sum))
+        print(str(presum))
+        print(str(previous))
+        print(str(d[a[i]]))
+        print(">>>>>>>")
+        if d[a[i]] > previous and previous > 0:
+            print(str(sum))
+            print(str(presum))
+            print(str(previous))
+            print(str(d[a[i]]))
+            print("!!!!!!")
+            sum -= (previous + d[a[i]])
+            print(str(sum))
             diff = d[a[i]] - previous
             sum += abs(diff)
-    previous = d[a[i]]
-    presum = sum 
-
-    print(array)
+            print(str(sum))
+            print(str(diff))
+            #print(str(sum))
+        else:
+            sum = sum
+        previous = d[a[i]]
+        presum = sum 
+        
     print(str(sum))
     print(previous)
+    print("dfdjd")
 
 reading(string)
 
