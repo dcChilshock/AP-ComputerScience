@@ -19,7 +19,7 @@ f = 0 #D
 m = 0
 string = input("input roman numerals: ")
 def reading(a):
-    presum = 0 
+    presum = 0
     sum = 0
     previous = 0
     b = 0
@@ -70,7 +70,5 @@ def reading(a):
     print(str(sum))
     print(previous)
     print("dfdjd")
-
+    print("This is the sum = "+str(sum))
 reading(string)
-
-
