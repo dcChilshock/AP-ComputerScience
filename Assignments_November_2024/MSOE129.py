@@ -7,16 +7,10 @@
 # CXI = 110
 #MCCLXXIII = 1273
 
-#No 1 letter repeated more than 3 times in a row
+# No 1 letter repeated more than 3 times in a row
 # Subtraction = smaller number before larger number
 # I (1) - X(10) = 9
-i = 0
-v = 0
-x = 0
-l = 0
-c = 0
-f = 0 #D
-m = 0
+
 string = input("input roman numerals: ")
 def reading(a):
     presum = 0
@@ -29,7 +23,6 @@ def reading(a):
     delete = {}
     length = len(a)
     for i in range(0,length): 
-        b += 1
         if a[i] == "M":
             sum += d[a[i]]
         elif a[i] == "D":
@@ -44,11 +37,6 @@ def reading(a):
             sum += d[a[i]]
         elif a[i] == "I":
             sum += d[a[i]]
-        print(str(sum))
-        print(str(presum))
-        print(str(previous))
-        print(str(d[a[i]]))
-        print(">>>>>>>")
         if d[a[i]] > previous and previous > 0:
             print(str(sum))
             print(str(presum))
@@ -66,9 +54,6 @@ def reading(a):
             sum = sum
         previous = d[a[i]]
         presum = sum 
-        
-    print(str(sum))
-    print(previous)
-    print("dfdjd")
-    print("This is the sum = "+str(sum))
+    print("This is the roman numeral. "+ a)
+    print("This is the number in numeral form. "+str(sum))
 reading(string)
