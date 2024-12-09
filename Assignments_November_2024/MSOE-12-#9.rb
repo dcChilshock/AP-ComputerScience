@@ -7,21 +7,21 @@ d = {
     }
     length = len(a)
     for i in range(0,length): 
-        if a[i] == "M":
+        if a[i] == "M"
             sum += d[a[i]]
-        elif a[i] == "D":
+        elsif a[i] == "D"
             sum += d[a[i]]
-        elif a[i] == "C":
+        elsif a[i] == "C"
             sum += d[a[i]]
-        elif a[i] == "L": 
+        elsif a[i] == "L"
             sum += d[a[i]]
-        elif a[i] == "X":
+        elsif a[i] == "X"
             sum += d[a[i]]
-        elif a[i] == "V":
+        elsif a[i] == "V"
             sum += d[a[i]]
-        elif a[i] == "I":
+        elsif a[i] == "I"
             sum += d[a[i]]
-        if d[a[i]] > previous and previous > 0:
+        if d[a[i]] > previous and previous > 0
             sum -= (previous + d[a[i]])
             diff = d[a[i]] - previous
             sum += abs(diff)

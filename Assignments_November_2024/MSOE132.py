@@ -9,7 +9,6 @@ def alliteration(a):
         current = a[0]
         if previous == " ":
             mylist.append(a[i])
-            dic.append(a[i]:i)   
         else:
             a += 0
     print(str(mylist))
