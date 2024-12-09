@@ -3,7 +3,7 @@ def alliteration(a):
     len1 = len(a)
     count = 0
     previous = ""
-    mylist = [a[0],]
+    mylist = [a]
     dic = {a[0]: 0,}
     for i in range(1,len1):
         current = a[0]
@@ -11,6 +11,6 @@ def alliteration(a):
             mylist.append(a[i])
             dic.append(a[i]:i)   
         else:
-
-    print mylist
-    print dic            
+            a += 0
+    print(str(mylist))
+    print(str(dic))            
