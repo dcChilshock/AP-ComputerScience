@@ -1,36 +1,29 @@
-presum = 0
-sum = 0
-previous = 0
-b = 0
+puts "Input roman numerals that follow all the rules: "
+string = gets.chomp
+
+
 d = {
-    'I'=>1,'V'=>5,'X'=>10,'L'=>50,'C'=>100,'D'=>500,'M'=>1000,
+    "I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000,
     }
     length = len(a)
-    for i in range(0,length): 
-        if a[i] == "M"
+def f(x)
+    sum = 0
+    previous = 0
+    for i in range(0,length)
+        if a[i] in d
             sum += d[a[i]]
-        elsif a[i] == "D"
-            sum += d[a[i]]
-        elsif a[i] == "C"
-            sum += d[a[i]]
-        elsif a[i] == "L"
-            sum += d[a[i]]
-        elsif a[i] == "X"
-            sum += d[a[i]]
-        elsif a[i] == "V"
-            sum += d[a[i]]
-        elsif a[i] == "I"
-            sum += d[a[i]]
-        if d[a[i]] > previous and previous > 0
-            sum -= (previous + d[a[i]])
-            diff = d[a[i]] - previous
-            sum += abs(diff)
-        else:
+        end
+        if previous > 0
+            if d[a[i]] > previous
+                sum -= previous + d[a[i]]
+                diff = d[a[i]] - previous
+                sum += abs(diff)
+            end
+        else
             sum = sum
+        end
         previous = d[a[i]]
-    print("This is the roman numeral. "+ a)
-    print("This is the number in numeral form. "+str(sum))
-
-def call():
-    string = "Input roman numerals that follow all the rules: "
-    reading(string)
+    
+end
+puts "This is the roman numeral. "+ a.to_s
+puts "This is the number in numeral form. "+ sum.to_s
