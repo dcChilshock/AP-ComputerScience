@@ -1,4 +1,4 @@
-# This is the list of books for my libary project 3
+# This is the list of books for my libary project 2
 # ""=>"",
 book = {"Artemis Fowl"=>"Eoin Colfer",
 "Chimera"=>"John Barth",
@@ -49,10 +49,40 @@ book = {"Artemis Fowl"=>"Eoin Colfer",
 "Legends & Lattes"=>"Travis Baldree",
 "The Poppy War"=>"R.F. Kuang"}
 
-author = {"Eoin Colfer"=>"01","John Barth"=>"02",""=>"03","John Crowley"=>"04",
-"Nnedi Okorafor"=>"05","Henry Newbolt"=>"06","Lewis Carroll"=>"07","Orson Scott Card"=>"08",
-"Neil Gaiman"=>"09","Robin McKinley"=>"10","C.S. Lewis"=>"11", "Martha Wells"=>"12","Stephen King"=>"13",
-"Terry Pratchett"=>"14","Jim Butcher"=>"15","Brandon Sanderson"=>"16","Christopher Paolini"=>"17",
-"Sanders Anne Laubenthal"=>"18","Matt Ruff"=>"19","Rick Riordan"=>"20","J.R.R. Tolkien"=>"21",
-"Diana Wynn Jones"=>"22","Patrick Rothfuss"=>"23","Terry Brooks"=>"24","R.F. Kuang"=>"25",
-"Travis Baldree"=>"26"}
+author = ("Eoin Colfer","John Barth","Travis Baldree","John Crowley",
+"Nnedi Okorafor","Henry Newbolt","Lewis Carroll","Orson Scott Card",
+"Neil Gaiman","Robin McKinley","C.S. Lewis", "Martha Wells","Stephen King",
+"Terry Pratchett","Jim Butcher","Brandon Sanderson","Christopher Paolini",
+"Sanders Anne Laubenthal","Matt Ruff","Rick Riordan","J.R.R. Tolkien",
+"Diana Wynn Jones","Patrick Rothfuss","Terry Brooks","R.F. Kuang")
+
+filename = "bookssaved.txt"
+
+def file_add(x)
+File.open(filename, "w") do |file|
+    file.close
+end
+
+puts "Do you Wish to start libarytracker3000?"
+puts "y or n."
+n = gets.chomp
+if n == "y":
+   puts "What would you like to do."
+   puts "1. Add Books to your list: "
+   puts "2. Remove Books from your list: "
+   puts "3. Request Books to be added: "
+   puts "4. "
+   puts "5. Exit"
+   y = gets.chomp.to_string
+   if y == "1"
+      
+   elsif y == "2"
+
+   elsif y == "3"
+   
+   elsif y == "4"
+
+   elsif y == "5"
+      "Done."
+else
+   puts "what are you here for then?"
