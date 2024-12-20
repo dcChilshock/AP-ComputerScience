@@ -86,14 +86,9 @@ puts "Do you Wish to start libarytracker3000?"
 puts "y or n."
 n = gets.chomp
 i = "1"
-def start(list,book,i)
-   mach = []
-   def book_add(mach)
-      puts "Which book would you like to add to your list?"
-      puts "Use the books fullname"
-      d = gets.chomp
-      mach.push(d.to_s)
-   end
+mach = ["book", "book2"]
+def start(list,book,i,mach)
+   v = 0
    puts "What would you like to do."
    puts "1. Add Books to your list: "
    puts "2. Remove Books from your list: "
@@ -101,16 +96,24 @@ def start(list,book,i)
    y = gets.chomp.to_s
    if y == "1"
       a = list.length
-      v = 0
       h = 10
       puts " "
       puts " "
-      for l in 1..a do
+      for l in 1..a-1 do
          v += 1
          puts l.to_s+". "+list[l]+". \n Author: "+book[list[l]]
+         if l == 86
+            puts "End of list."
+            v = h
+         else
+         end
          if v == h
             h = v + 10
-            puts "1. Next page."
+            if l > 80
+               puts "1. No more pages"
+            else
+               puts "1. Next page."
+            end
             if v > 10
                puts "1-2. Back page."
                puts "2. Choose a book."
@@ -123,11 +126,10 @@ def start(list,book,i)
             if c == "1-2"
                l = l - 10
             elsif c == "2"
-               book_add(mach)
-               #puts "Which book would you like to add to your list?"
-               #d = gets.chomp
-               #mach.push(d.to_s)
-               break
+               puts "Which book would you like to add to your list?"
+               puts "Use the books fullname"
+               d = gets.chomp
+               mach.push(d.to_s)
             elsif c == "3"
                puts "Returning to main"
                break
@@ -139,9 +141,11 @@ def start(list,book,i)
    elsif y == "2"
       f = mach.length
       if f > 0
-         for s in 1..f do
-            v += 1
-            puts s.to_s+". "+mach[s]+". \n Author: "+book[mach[s]]
+         for s in 0..f do
+            puts book["coraline"] #test bit 
+            v = v + 1
+            k = mach[s]
+            puts s.to_s+". "+". \n Author: " #mach[s], book[mach[s]]
             if l == f
                puts "Which book would you like to remove?"
                puts "Give the numbered position of the book in your list, the first book is 1."
@@ -153,19 +157,29 @@ def start(list,book,i)
             end
          end
       else
+         puts "You have no items in your list"
       end
-      puts "hello"
-   
-   else y == "3"
-      i = "2"
-      return i
-      puts "AHHHH"
+   elsif y == "3"
+      return 
+      
    end
 end
+
 if n == "y"
-   while i == "1"
-      start(list,book,i)
-   end
+      while i == "1"
+         puts "Do you wish to continue/exit? y/n"
+         p = gets.chomp
+         if p == "y"
+            i = "1"
+         elsif p == "n"
+            i = "2"
+         end
+         if i == "1"
+            start(list,book,i,mach)
+         else
+            break
+         end
+      end
 else
    puts "what are you here for then?"
 end
