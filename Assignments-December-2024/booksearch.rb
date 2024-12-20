@@ -153,11 +153,13 @@ def start(list,book,i)
             end
          end
       else
-         puts "hello"
       end
-   else
-      i == "2"
+      puts "hello"
+   
+   else y == "3"
+      i = "2"
       return i
+      puts "AHHHH"
    end
 end
 if n == "y"
