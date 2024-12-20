@@ -27,7 +27,7 @@ list = ["American gods","Artemis Fowl","Alice in Wonderland","Aladore", "Aegypt"
 "The Lost tales","Howl's Moving Castle",
 "The Name of the Wind","The Wise Man's Fear",
 "The Doors of Stone","Legends & Lattes","The Poppy War"
-]
+] #1
 book = {"Artemis Fowl"=>"Eoin Colfer","Chimera"=>"John Barth","Cats have no lord"=>"Will Shetterly","Aegypt"=>"John Crowley",
 "Akata Witch"=>"Nnedi Okorafor","Akata Warrior"=>"Nnedi Okorafor","Aladore"=>"Henry Newbolt","Alice in Wonderland"=>"Lewis Carroll","The tales of alvin maker"=>"Orson Scott Card",
 "Harts Hope"=>"Orson Scott Card","American gods"=>"Neil Gaiman","Coraline"=>"Neil Gaiman","Beauty"=>"Robin McKinley",
