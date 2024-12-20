@@ -122,13 +122,13 @@ def start(list,book,i)
             c = gets.chomp.to_s
             if c == "1-2"
                l = l - 10
-            elsif c == "3"
+            elsif c == "2"
                book_add(mach)
                #puts "Which book would you like to add to your list?"
                #d = gets.chomp
                #mach.push(d.to_s)
                break
-            elsif c == "4"
+            elsif c == "3"
                puts "Returning to main"
                break
             elsif c == "1"
@@ -148,15 +148,14 @@ def start(list,book,i)
                g = gets.chomp.to_i
                g = g - 1
                mach.delete_at(g)
-               break 
             else
                puts "hello"
             end
-         end
-      end
-   elsif y == "3"
-      i = "2"
-      "Done."
+      else
+         puts "hello"
+   else y == "3"
+      i == "2"
+      return i
    end
 end
 if n == "y"
@@ -166,4 +165,3 @@ if n == "y"
 else
    puts "what are you here for then?"
 end
-   
