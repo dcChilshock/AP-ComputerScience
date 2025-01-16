@@ -3,13 +3,14 @@
 def main():
     try:
         data = []
-        with open("data/prg408a.dat", 'r')as f:
+        with open("/workspaces/AP-ComputerScience/data/prg408a.dat", 'r')as f:
             lines = f.readlines()
             for line in lines:
                 id, score = line.split(' ')
                 id = int(id)
                 score = int(score)
                 #Make helper class objects and add to data
+
         #ToDo: your code here
         ...
     except Exception as e:
