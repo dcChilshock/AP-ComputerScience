@@ -64,7 +64,7 @@ class TestCalc(unittest.TestCase):
 #mod
 
     def test_mod_nomral_case(self):
-        self.assertEqual(Calc.mod(1,2), 3) 
+        self.assertEqual(Calc.mod(1,2), 1) 
 
     def test_mod_edge_case(self):
         self.assertEqual(Calc.mod(0,0), 0)
