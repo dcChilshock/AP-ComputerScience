@@ -19,12 +19,23 @@ class sorting:
         return list 
     
     def selection(self):
+        a = 0
+        length = len(list) 
+        large = max(list)
+        small = min(list)
+        for i in length:
+            list[i] = list
+        return list
+    def insertion(self):
+        a = 0
+        length = len(list) 
+        current = list[a]
         for i in length:
             if list[i] > current:
                 pass
             else:
-                
-    def insertion(self):
+                pass
+        return list
 
     
 
