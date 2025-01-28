@@ -31,4 +31,4 @@ class TestQuicksort(unittest.TestCase):
 #python test_prog985u.py
 if __name__ == '__main__':
     sutie = unittest.TestLoader().loadTestsFromTestCase(TestQuicksort)
-    unittest.TextTestRunner(verbosity=0).run(suite)
+    unittest.TextTestRunner(verbosity=0).run(sutie)
