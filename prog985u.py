@@ -7,7 +7,7 @@ class Quicksort:
             pivot = Quicksort.partition(A, low, high)
             Quicksort.sort(A, low, pivot-1)
             Quicksort.sort(A, pivot+1, high)
-        return a
+        return A
 
     @staticmethod
     def partition(A,low,high):

@@ -27,7 +27,7 @@ class TestQuicksort(unittest.TestCase):
         Quicksort.sort(input)
         end_time = current_time
         #Quicksort has to take less than ten seconds when sorting 1 million items
-        self.assertLess(end_time-start_time,10)
+        self.assertLess(end_time,start_time,10)
 #python test_prog985u.py
 if __name__ == '__main__':
     sutie = unittest.TestLoader().loadTestsFromTestCase(TestQuicksort)
