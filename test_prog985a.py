@@ -13,12 +13,12 @@ class TestCalc(unittest.TestCase):
         self.starTime = current_time()
     
     def tearDown(self):
-        t = current_time() - self.startTime 
+        t = current_time() - self.starTime
         print(f"{self.id()}: {t:6f}") #t:6f rounds it to the sixth decimal point
 
 #add
 
-    def test_add_nomral_case(self):
+    def test_add_normal_case(self):
         self.assertEqual(Calc.add(1,2), 3) #many different types of asser equal aka almost equal, not equal etc
 
     def test_add_edge_case(self):
@@ -29,7 +29,7 @@ class TestCalc(unittest.TestCase):
 
 #div
 
-    def test_div_nomral_case(self):
+    def test_div_normal_case(self):
         self.assertEqual(Calc.div(1,2), 0.5)
 
     def test_div_edge_case(self):
@@ -41,7 +41,7 @@ class TestCalc(unittest.TestCase):
 
 #sub
 
-    def test_sub_nomral_case(self):
+    def test_sub_normal_case(self):
         self.assertEqual(Calc.sub(1,2), -1) 
 
     def test_sub_edge_case(self):
@@ -52,7 +52,7 @@ class TestCalc(unittest.TestCase):
 
 #mul
 
-    def test_mul_nomral_case(self):
+    def test_mul_normal_case(self):
         self.assertEqual(Calc.mul(1,2), 2)
 
     def test_mul_edge_case(self):
@@ -63,11 +63,12 @@ class TestCalc(unittest.TestCase):
 
 #mod
 
-    def test_mod_nomral_case(self):
+    def test_mod_normal_case(self):
         self.assertEqual(Calc.mod(1,2), 1) 
 
     def test_mod_edge_case(self):
-        self.assertEqual(Calc.mod(0,0), 0)
+        with self.assertRaises(ZeroDivisionError):
+            Calc.mod(0,0)
 
     def test_mod_error_case(self):
         self.assertEqual(Calc.mod(1,-1), 0)
