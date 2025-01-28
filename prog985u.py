@@ -17,7 +17,7 @@ class Quicksort:
             if A[j] <= pivot:
                 i += 1
                 Quicksort.swap(A, i, j)
-        Quicksort.swap(a, i+1, high)
+        Quicksort.swap(A, i+1, high)
         return i+1
 
     @staticmethod
