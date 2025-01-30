@@ -1,23 +1,21 @@
 class Mergesort:
     @staticmethod #sorts in ascending order. 
     def sort(A):
-        if length(A) > 1:
-            mid=length(A)/2
-            L = A[0..mid-1]
-            R = A[mid..length(A)]
+        if len(A) > 1:
+            mid=len(A)/2
+            L = A[0,mid-1]
+            R = A[mid,len(A)]
             Mergesort.sort(L)
             Mergesort.sort(R)
             Mergesort.merge(A,L,R)
-        else if:
-            
-
+        return A
 
     @staticmethod
     def merge(A,L,R):
         i = 0
         j = 0
         k = 0
-        while i < length[L] and j < length[R] do:
+        while i < len[L] and j < len[R]:
             if L[i] < R[j]:
                 A[k] = L[i]
                 i = i + 1
@@ -25,11 +23,11 @@ class Mergesort:
                 A[k] = R[j]
                 j = j + 1
             k = k + 1
-        while i < length[L]:
+        while i < len[L]:
             A[k] = L[i]
             i = i + 1
             k = k + 1
-        while j < length[R]:
+        while j < len[R]:
             A[K] = R[j]
             j = j + 1
             k = k + 1
