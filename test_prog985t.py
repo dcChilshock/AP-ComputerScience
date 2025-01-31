@@ -58,7 +58,7 @@ class TestMergesort(unittest.TestCase):
         #has to take less than ten seconds when sorting 1 million items
         self.assertLess(end_time-start_time,10)
 
-#python test_prog985t.py
+#test_prog985t.py
 if __name__ == '__main__':
     sutie = unittest.TestLoader().loadTestsFromTestCase(TestMergesort)
     unittest.TextTestRunner(verbosity=0).run(sutie)
