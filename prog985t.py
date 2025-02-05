@@ -3,8 +3,8 @@ class Mergesort:
     def sort(A,L=0,R=0):
         if len(A) > 1:
             mid=len(A)/2 
-            L = A[0:mid-1]
-            R = A[mid:len(A)]
+            L = A[0:int(mid)-1]
+            R = A[int(mid):len(A)]
             Mergesort.sort(L)
             Mergesort.sort(R)
             Mergesort.merge(A,L,R)
