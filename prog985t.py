@@ -2,11 +2,11 @@ class Mergesort:
     @staticmethod #sorts in ascending order. 
     def sort(A):
         if len(A) > 1:
-            mid=len(A)/2 
-            L = A[0:round(mid)-1]
-            R = A[round(mid):len(A)]
-            L = Mergesort.sort(L)
-            R = Mergesort.sort(R)
+            mid=len(A)//2 
+            L = A[0:mid-1]
+            R = A[mid:len(A)]
+            Mergesort.sort(L)
+            Mergesort.sort(R)
             Mergesort.merge(A,L,R)
         return A
 #python test_prog985t.py
@@ -31,6 +31,7 @@ class Mergesort:
             A[k] = R[j]
             j = j + 1
             k = k + 1
+        return A
 
 
 
