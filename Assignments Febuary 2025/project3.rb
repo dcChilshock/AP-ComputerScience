@@ -1,21 +1,27 @@
-#Project ideas, escape room.
-#Write code here, figure out presentation later.
+#unit converter
+# Dictinary (cant spell)
 
-#Escape room, a puzzle game, text adventure game/coding project. Probably include puzzles n stuff.
+#All unit conversions ill do, 1, decmial to octal, hex, binary and so for(I hope)
+#the ones I must do are basic imperial and metric systems first(Length first, then weight)
 
-# Requirements to remember. 
+#Starts the process for unit conversion
+def convert(num, unit1, unit2):
+    a = length[unit1]
+    b = length[unit2]
+    c = unit1.to_s #c = the inch like list ?
+    if a > b #this means multipulcation
+        num * unit1[unit2]
+    elsif a < b #this means its division.
+        num / unit1[unit2]
 
-# The program should use math, conditions, and loops and MUST have a function with variable arguments 
-# (and conditions based on the arguments provided) and something involving a list and searching, sorting,
-# or iterating through the list (or any similar data structure like a dictionary).
+puts "Available unit conversions: Length, Mass, Time, Temperature"
+#Length includes inch, foot, mile, kilometer, meter, centimeter
+length = {centimeter => 1,inch => 2,meter =>3, feet => 4, mile => 5,kilometer => 6,} #length dictionary
 
-#To decide later: 
-#if I want to make this more visual instead of a console.
-
-#inspiration for this is Zork.
-#start -> introduce the game, & actions you can take, then 
-
-#lists would be used in checking if an action is doable, items you have. Things activiated.
-
-#first thing to do is create the scenario the escape room is. 
-# You awake in a suburban bedroom, the only light comes from a small lamp illuminating the room.
+inch = {centimeter => 2.54,feet => 12,meter => 39.37,mile => 63360,kilometer => 39370,}
+centimeter = {inch => 2.54,feet => 30.48,meter => 100,mile => 160900,kilometer => 100000,}
+feet = {centimeter => 30.48,inch => 12,meter => 3.281,mile =>5280,kilometer =>3281 ,}
+mile = {centimeter => ,feet => ,meter => ,inch => ,kilometer => ,}
+kilometer = {centimeter => ,feet => ,meter => ,mile => ,inch => ,}
+meter = {centimeter => ,feet => ,inch => 39.37,mile => ,kilometer => ,}
+temp name
