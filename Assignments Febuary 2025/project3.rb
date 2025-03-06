@@ -14,26 +14,30 @@ def convert_length(num,unit1,unit2,form):
     
     if form == "length": #option 1, is to do this for all conversions
         d = length[unit1]
+        j = length1[d]
+        x = j[unit2.to_s]
         #length.invert()
-        
-        if d == 1
-            x = centimeter[unit2.to_s]
-        elsif d == 2 
-            x = inch[unit2.to_s]
-        elsif d == 3
-            x = meter[unit2.to_s]
-        elsif d == 4
-            x = feet[unit2.to_s]
-        elsif d == 5
-            x = mile[unit2.to_s ]
-        elsif d == 6 
-            x = kilometer[unit2.to_s]
-        end 
+        #if d == 1
+            #x = centimeter[unit2.to_s]
+         #   j = length1[d]
+          #  x = j[unit2.to_s]
+        #elsif d == 2 
+        #    #x = inch[unit2.to_s]
+        #elsif d == 3
+        #    #x = meter[unit2.to_s]
+        #elsif d == 4
+        #    #x = feet[unit2.to_s]
+        #elsif d == 5
+        #    #x = mile[unit2.to_s ]
+        #elsif d == 6 
+            #x = kilometer[unit2.to_s]
+        #end 
     if a > b #this means multipulcation
-        num * x[y]
+        total = num * x
     elsif a < b #this means its division.
-        num / x[y]
+        total = num / x
     end 
+    return total 
 end
 
 check = ["length"] #add to this list when you add more conversions like area or mass etc
