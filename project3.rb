@@ -7,12 +7,12 @@
 #the ones I must do are basic imperial and metric systems first(Length first, then weight)
 
 #Starts the process for unit conversion
-def convert_length(num,unit1,unit2,form):
+def convert_length(num,unit1,unit2,form)
     a = length[unit1]
     b = length[unit2]
     c = unit1 #c = the inch like list ?
     
-    if form == "length": #option 1, is to do this for all conversions
+    if form == "length" #option 1, is to do this for all conversions
         d = length[unit1]
         j = length1[d]
         x = j[unit2.to_s]
@@ -32,6 +32,7 @@ def convert_length(num,unit1,unit2,form):
         #elsif d == 6 
             #x = kilometer[unit2.to_s]
         #end 
+    end
     if a > b #this means multipulcation
         total = num * x
     elsif a < b #this means its division.
@@ -55,12 +56,12 @@ mile = {"centimeter"=>160934,"feet"=>5280,"meter"=>1609,"inch"=>63360 ,"kilomete
 kilometer = {"centimeter"=>100000,"feet"=>3280.84,"meter"=>1000,"mile"=>1.609,"inch"=>39370,}
 meter = {"centimeter"=>100,"feet"=>3.28,"inch"=>39.37,"mile"=>1609,"kilometer"=>1000,}
 
-def start():
+def start() 
     puts "Available unit conversions, length: More will be avaliable in time."
     answer = gets.chomp
-    if answer in check == false
+    if check[answer] == false
         puts "Input not compatible, please input again. Tip:spell it like its spelt in the opening message"
-        while answer in check == false
+        while check[answer] == false do
             input = gets.chomp
             answer = input
         end
