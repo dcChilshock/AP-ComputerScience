@@ -8,9 +8,11 @@
 
 #Starts the process for unit conversion
 def convert_length(num,unit1,unit2,form)
-    a = length[unit1]
+    a = length[unit1] 
+    # does not mean get the legnth of the variable unit1 its the find the location of the. 
+    # variable in the list unit 1.
     b = length[unit2]
-    c = unit1 #c = the inch like list ?
+    c = conversion_l[unit1] #c = the inch like list ?
     
     if form == "length" #option 1, is to do this for all conversions
         d = length[unit1]
@@ -45,9 +47,8 @@ check = ["length"] #add to this list when you add more conversions like area or 
 
 #might need to change these from variables to strings idk if ill need to.
 len = ["centimeter", "inch", "meter", "feet", "mile", "kilometer"]
-length1 = [1=>centimeter,2=>inch,3=>meter,4=>feet,5=>mile,6=>kilometer] #test list to see if what i want to do is possible
-#length dictionary for seeing * or / to use & just like easily telling whats what ig.
-length = {"centimeter" => 1,"inch" => 2,"meter" => 3, "feet" => 4, "mile" => 5,"kilometer" => 6,} 
+
+#length = {"centimeter" => 1,"inch" => 2,"meter" => 3, "feet" => 4, "mile" => 5,"kilometer" => 6,} 
 #dictionaries for unit converions. probably a better way to do it but I dont have that time.
 inch = {"centimeter"=>2.54,"feet"=>12,"meter"=>39.37,"mile"=>63360,"kilometer"=>39370,}
 centimeter = {"inch"=>2.54,"feet"=>30.48,"meter"=>100,"mile"=>160900,"kilometer"=>100000,}
@@ -56,12 +57,23 @@ mile = {"centimeter"=>160934,"feet"=>5280,"meter"=>1609,"inch"=>63360 ,"kilomete
 kilometer = {"centimeter"=>100000,"feet"=>3280.84,"meter"=>1000,"mile"=>1.609,"inch"=>39370,}
 meter = {"centimeter"=>100,"feet"=>3.28,"inch"=>39.37,"mile"=>1609,"kilometer"=>1000,}
 
-def start() 
+conversion_l={"centimeter"=>{"inch"=>2.54,"feet"=>30.48,"meter"=>100,"mile"=>160900,"kilometer"=>100000,}, 
+"inch"=>{"centimeter"=>2.54,"feet"=>12,"meter"=>39.37,"mile"=>63360,"kilometer"=>39370,},
+"meter"=>{"centimeter"=>100,"feet"=>3.28,"inch"=>39.37,"mile"=>1609,"kilometer"=>1000,},
+"feet"=>{"centimeter"=>30.48,"inch"=>12,"meter"=>3.281,"mile"=>5280,"kilometer"=>3281 ,},
+"mile"=>{"centimeter"=>160934,"feet"=>5280,"meter"=>1609,"inch"=>63360 ,"kilometer"=>1.609,},
+"kilometer"=>{"centimeter"=>100000,"feet"=>3280.84,"meter"=>1000,"mile"=>1.609,"inch"=>39370,}}
+
+length = {"centimeter"=>1,"inch"=>2,"meter"=>3,"feet"=>4,"mile"=>5,"kilometer"=>6} #test list to see if what i want to do is possible
+#length dictionary for seeing * or / to use & just like easily telling whats what ig.
+
+def start(a,b,c,d) 
+    check = ["length"]
     puts "Available unit conversions, length: More will be avaliable in time."
     answer = gets.chomp
-    if check[answer] == false
+    if check.include?(answer) == false
         puts "Input not compatible, please input again. Tip:spell it like its spelt in the opening message"
-        while check[answer] == false do
+        while check.include?(answer) == false
             input = gets.chomp
             answer = input
         end
@@ -91,9 +103,8 @@ def start()
 end 
 
 
-
-
-        
+# code to start the program
+start(conversion_l, length, len, check)
         
 
 
