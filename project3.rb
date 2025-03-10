@@ -7,41 +7,6 @@
 #the ones I must do are basic imperial and metric systems first(Length first, then weight)
 
 #Starts the process for unit conversion
-def convert_length(num,unit1,unit2,form)
-    a = length[unit1] 
-    # does not mean get the legnth of the variable unit1 its the find the location of the. 
-    # variable in the list unit 1.
-    b = length[unit2]
-    c = conversion_l[unit1] #c = the inch like list ?
-    
-    if form == "length" #option 1, is to do this for all conversions
-        d = length[unit1]
-        j = length1[d]
-        x = j[unit2.to_s]
-        #length.invert()
-        #if d == 1
-            #x = centimeter[unit2.to_s]
-         #   j = length1[d]
-          #  x = j[unit2.to_s]
-        #elsif d == 2 
-        #    #x = inch[unit2.to_s]
-        #elsif d == 3
-        #    #x = meter[unit2.to_s]
-        #elsif d == 4
-        #    #x = feet[unit2.to_s]
-        #elsif d == 5
-        #    #x = mile[unit2.to_s ]
-        #elsif d == 6 
-            #x = kilometer[unit2.to_s]
-        #end 
-    end
-    if a > b #this means multipulcation
-        total = num * x
-    elsif a < b #this means its division.
-        total = num / x
-    end 
-    return total 
-end
 
 check = ["length"] #add to this list when you add more conversions like area or mass etc
 
@@ -66,8 +31,7 @@ conversion_l={"centimeter"=>{"inch"=>2.54,"feet"=>30.48,"meter"=>100,"mile"=>160
 
 length = {"centimeter"=>1,"inch"=>2,"meter"=>3,"feet"=>4,"mile"=>5,"kilometer"=>6} #test list to see if what i want to do is possible
 #length dictionary for seeing * or / to use & just like easily telling whats what ig.
-
-def start(a,b,c,d) 
+def start(conversion_l,length,len,check) 
     check = ["length"]
     puts "Available unit conversions, length: More will be avaliable in time."
     answer = gets.chomp
@@ -97,14 +61,27 @@ def start(a,b,c,d)
         puts "Pick a unit to convert to."
         unit2 = gets.chomp
 
-        convert_length(num,unit1,unit2,form) #change this when adding more conversions 
+        convert_length(num,unit1,unit2,form,conversion_l) #change this when adding more conversions 
 
     end
 end 
+
+def convert_length(a,b,c,d,e)
+    list = e[a,b] #c = the inch like list ?
+    unit1 = length[b]
+    unit2 = length[c]
+    if d == "length" #option 1, is to do this for all conversions
+        x = j[unit2.to_s]
+    end
+    if unit1 > unit2 #this means multipulcation
+        total = num * x
+    elsif unit1 < unit2 #this means its division.
+        total = num / x
+    end 
+    return total 
+end
 
 
 # code to start the program
 start(conversion_l, length, len, check)
         
-
-
