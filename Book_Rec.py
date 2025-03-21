@@ -1,8 +1,10 @@
-import csv
+import pandas as pd
+import numpy as np 
 
-#headings in order 1: Index/Id, title, authors, rating, isbn, isbn13, language, page_count, ratings_count TODO ADD THE REST
+#headings in order 1: Index/Id, 2 title, 3 authors, 4 rating, 5 isbn, 6 isbn13, 7 language,  8 page_count, 
+#--9 ratings count, 10 publication, 11 publisher 
 
-with open('/workspaces/AP-ComputerScience/data/books.csv','r') as file:
-    reader = csv.reader(file)
-    for row in reader:
-        length = len(row)
+df = pd.read_csv("/workspaces/AP-ComputerScience/data/books.csv",sep = ",", header = 0)
+
+print(df)
+
