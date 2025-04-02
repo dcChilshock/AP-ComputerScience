@@ -10,3 +10,4 @@ class SortingAlgorthim:
         return self.score < other.score
 
     def id():
+        pass 

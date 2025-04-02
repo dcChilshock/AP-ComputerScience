@@ -17,32 +17,32 @@ class TestCalc(unittest.TestCase):
         print(f"{self.id()}: {t:6f}") #t:6f rounds it to the sixth decimal point
 
     def test_add_nomral_case(self):
-        self.assertEqual(Calc.add(a:1,b:2), second:3) #many different types of asser equal aka almost equal, not equal etc
+        self.assertEqual(Calc.add(1,2), 3) #many different types of asser equal aka almost equal, not equal etc
 
     def test_add_edge_case(self):
-        self.assertEqual(Calc.add(a:0,b:0), second:0)
+        self.assertEqual(Calc.add(0,0), 0)
 
     def test_add_error_case(self):
-        self.assertEqual(Calc.add(a:1,b:-1), second:0)
+        self.assertEqual(Calc.add(1,-1), 0)
 
     def test_div_nomral_case(self):
-        self.assertEqual(Calc.div(a:1,b:2), second:0.5)
+        self.assertEqual(Calc.div(1,2),0.5)
 
     def test_div_edge_case(self):
         with self.assertRaises(ZeroDivisionError):
-            Calc.div(a:0,b:0)
+            Calc.div(0,0)
 
     def test_div_error_case(self):
-        self.assertEqual(Calc.div(a:1,b:-1), second:-1)
+        self.assertEqual(Calc.div(1,-1),-1)
 
     def test_sub_nomral_case(self):
-        self.assertEqual(Calc.sub(a:1,b:2), second:3) 
+        self.assertEqual(Calc.sub(1,2),3) 
 
     def test_sub_edge_case(self):
-        self.assertEqual(Calc.sub(a:0,b:0), second:0)
+        self.assertEqual(Calc.sub(0,0),0)
 
     def test_sub_error_case(self):
-        self.assertEqual(Calc.sub(a:1,b:-1), second:0)
+        self.assertEqual(Calc.sub(1,-1),0)
 
     def test_mul_nomral_case(self):
         self.assertEqual(Calc.mul(a:1,b:2), second:3)
