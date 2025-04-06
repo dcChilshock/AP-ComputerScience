@@ -3,7 +3,7 @@ import numpy as np
 #headings in order 1: Index/Id, 2 title, 3 authors, 4 rating, 5 isbn, 6 isbn13, 7 language,  8 page_count, 
 #--9 ratings count, 10 publication, 11 publisher 
 
-#df = pd.read_csv("data/books.csv",nrows=1000)
+df = pd.read_csv("data/books.csv",nrows=1000)
 #print(df)
 #i = 0
 #length = 11128
@@ -88,9 +88,33 @@ def prefrence():
 #           1 author, 2 book, 3 langauge, 4 publication 
 
 def recommend(a,b,c,d):
-    pass
-
+    df = pd.read_csv("data/books.csv",header=0,nrows=1000)
 
 print("<Welcome to the magnificent book finder.>")
 print("<How can we Help you today?>") 
-start()
+#start()
+#pd.options.display.max_rows = 9999
+df = pd.read_csv("data/books.csv",header=1,nrows =1)
+#converts to dataframe 
+
+#print(pd.options.display.max_rows) 
+print(df)
+print(df.loc["title"])
+piece = 1112
+
+#print(df)
+#for piece in pd.read_csv("data/books.csv", chunksize=piece):
+    
+
+
+
+
+#45625,A Viagem do Caminheiro da Alvorada (As Crónicas de Nárnia  #5),C.S. Lewis/Pauline Baynes/Ana Falcão Bastos,4.09,9722331329,9789722331326,por,176,161,14,9/1/2004,Editorial Presença
+#45626,O Príncipe Caspian (As Crónicas de Nárnia  #4),C.S. Lewis/Pauline Baynes/Ana Falcão Bastos,3.97,9722330977,9789722330978,por,160,215,11,10/11/2003,Editorial Presença
+#45630,Whores for Gloria,William T. Vollmann,3.69,0140231579,9780140231571,en-US,160,932,111,2/1/1994,Penguin Books
+#45631,Expelled from Eden: A William T. Vollmann Reader,William T. Vollmann/Larry McCaffery/Michael Hemmingson,4.06,1560254416,9781560254416,eng,512,156,20,12/21/2004,Da Capo Press
+#45633,You Bright and Risen Angels,William T. Vollmann,4.08,0140110879,9780140110876,eng,635,783,56,12/1/1988,Penguin Books
+#45634,The Ice-Shirt (Seven Dreams #1),William T. Vollmann,3.96,0140131965,9780140131963,eng,415,820,95,8/1/1993,Penguin Books
+#45639,Poor People,William T. Vollmann,3.72,0060878827,9780060878825,eng,434,769,139,2/27/2007,Ecco
+#45641,Las aventuras de Tom Sawyer,Mark Twain,3.91,8497646983,9788497646987,spa,272,113,12,5/28/2006,Edimat Libros
+#data cut out just to make clean division of groups.
