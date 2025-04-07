@@ -103,8 +103,13 @@ print(df.loc["title"])
 piece = 1112
 
 #print(df)
-#for piece in pd.read_csv("data/books.csv", chunksize=piece):
-    
+for piece in pd.read_csv("data/books.csv", chunksize=piece):
+    f = 1 
+    if str(f) in df.columns == True:
+        columnn_data = df[str(f)]
+    else: 
+        pass
+    f += 1
 
 
 
