@@ -114,19 +114,26 @@ piece = pd.read_csv("data/books.csv",iterator=True,chunksize=1112)
 with pd.read_csv("data/books.csv",iterator=True,chunksize=6) as reader:
     listid = ["isbn13","isbn10","title","subtitle","authors","categories","thumbnail","description","published_year","average_rating","num_pages","ratings_count"]
     #12 
+    isbns = []
+    titles = []
+    
+    x = 0
     f = 0
     g = 0
     t = len(listid)
     for chunk in reader:
         for row in chunk.iterrows():
-            for x in listid:
+            #if x == 12:
+                #x = 0
+            for x in range(0,t):
                 ind = listid[g]
                 print(chunk.at[f,ind])
-                f +=1 
+                f +=1
+                x +=1
             g += 1
             f == 0
     
-print(str(t))
+#print(str(t))
 #df = pd.read_csv("data/books.csv",header=0,nrows=1000)
 #print(df.loc[1])
 #print(df.at[1,"isbn13"])
