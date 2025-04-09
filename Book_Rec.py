@@ -3,7 +3,7 @@ import numpy as np
 #headings in order 1: Index/Id, 2 title, 3 authors, 4 rating, 5 isbn, 6 isbn13, 7 language,  8 page_count, 
 #--9 ratings count, 10 publication, 11 publisher 
 
-df = pd.read_csv("data/books.csv",nrows=1000)
+#df = pd.read_csv("data/books.csv",nrows=1000)
 #print(df)
 #i = 0
 #length = 11128
@@ -94,22 +94,36 @@ print("<Welcome to the magnificent book finder.>")
 print("<How can we Help you today?>") 
 #start()
 #pd.options.display.max_rows = 9999
-df = pd.read_csv("data/books.csv",header=1,nrows =1)
+#df = pd.read_csv("data/books.csv",header=1,nrows =1)
 #converts to dataframe 
-
+chunksize = 1000
+piece = pd.read_csv("data/books.csv",iterator=True,chunksize=1112)
 #print(pd.options.display.max_rows) 
-print(df)
-print(df.loc["title"])
-piece = 1112
-
 #print(df)
-for piece in pd.read_csv("data/books.csv", chunksize=piece):
-    f = 1 
-    if str(f) in df.columns == True:
-        columnn_data = df[str(f)]
-    else: 
-        pass
-    f += 1
+#print(df.loc["title"])
+#print(df)
+
+#for f in pd.read_csv("data/books.csv",iterator=True,chunksize=1112):
+#    f = 1 
+#    if str(f) in df.columns == True:
+#        columnn_data = df[str(f)]
+#        print("it works")
+#    else: 
+#        pass
+#    f += 1
+with pd.read_csv("data/books.csv",iterator=True,chunksize=6) as reader:
+    list = ["bookID","title","authors","average_rating","isbn","isbn13","language_code"," num_pages","ratings_count","publication_date","publisher"]
+    #11 
+    for chunk in reader:
+
+        reader.at['bookID']
+df = pd.read_csv("data/books.csv",header=0,nrows=1000)
+print(df.loc[1])
+print(df.at[1,"bookID"])
+
+
+
+
 
 
 
