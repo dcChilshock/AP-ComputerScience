@@ -1,39 +1,25 @@
 import pandas as pd
 import numpy as np 
 
-#PREFRENCES
 listgen = ["fantasy","fiction","science fiction"]
-listauth = [""] #not neccesarily needed.
-listrate = ["3"] # 3 stars or higher
-listread = []
+listauth = ["Janny Wurts"]
+listrate = ["3"]
+listread = ["spider's web"]
 listyear = ["2000"]
 
-isbns = []
-titles = []
-subt = []
-auth = []
-genre = [] 
-link = [] 
-des = [] 
-year = []
-nump = []
-rate_av = []
-rate_co = []
 ranking = []
 books = []
 dicton = {}
+
 def start():
-     #Possibly put intro text/lengthy explanations into a def
-    #within a class(so inheriting it to every fucntion isnt so annoying at least I think it would fix that.)
     print("<Start-End-Options> \n<Please Type one of the options provided into the console.>")
     answer = input()
     answer.lower()
-    if answer.strip() == "start": # lead further into program
-        lists = prefrence()
-        #1 author, 2 book, 3 langauge, 4 publication
-
-    elif answer.strip() == "options":
-        pass
+    if answer.strip() == "start":
+        l1,l2,l3,l4 = prefrence()
+        read()
+    elif answer.strip() == "all ready":
+         pass
     elif answer.strip() == "end":
         exit()
     else:
@@ -47,18 +33,18 @@ def prefrence():
     listy = []
     a = 7
     l = 0
+    b = ""
+    c = ""
+    d = ""
     print("Out of these options of genre which are you're favorite to read?")
     print("fantasy, adventure, fiction, nonfiction, mystery, sci-fi, history")
     print("Please write out done, if youre selection is complete. Please write your choices 1 at a time.")
-    for l in a:
+    while b != "done":
         b = input()
         l += 1
         b.lower()
         b.strip()
-        if input == "done":
-            l == a
-        else:
-            listg.append(b)
+        listg.append(b)
     print("Input some of youre favorite books")
     print("Please write out done when done. Please write your choices 1 at a time.")
     while c != "done":
@@ -81,16 +67,12 @@ def prefrence():
         f = input()
         f.strip
         listy.append(f)
-    else:
-        pass
     return lista,listb,listy,listg
 
 def recommend(a,b,c,d):
     df = pd.read_csv("data/books.csv",header=0,nrows=1000)
 
-def score(book,listid,listgen,listauth,listrate,listyear,listread): #potentially add a database/csv file of user books read. but
-    # that would be a lot of wokr this late into the project.
-    # needs lists of userers prefrences
+def score(book,listid,listgen,listauth,listrate,listyear,listread):
     rt = {}
     t = len(book)
     r = len(listid)
@@ -119,9 +101,11 @@ def score(book,listid,listgen,listauth,listrate,listyear,listread): #potentially
     for x in range(0,t):
          pass
     return score
+
 def read():
     with pd.read_csv("data/books.csv",iterator=True,chunksize=6) as reader:
         diction = {}
+        diction2 = {}
         listid = ["isbn13","isbn10","title","subtitle","authors","categories","thumbnail","description","published_year","average_rating","num_pages","ratings_count"]
         nc = 0
         f = 0
@@ -137,28 +121,6 @@ def read():
                     if g >= t:
                         g = 0
                     ind = listid[g]
-                    if g == 0:
-                        isbns.append(chunk.at[f,ind])
-                    elif g == 2:
-                        titles.append(chunk.at[f,ind])
-                    elif g == 3:
-                        subt.append(chunk.at[f,ind])
-                    elif g == 4:
-                        auth.append(chunk.at[f,ind])
-                    elif g == 5:
-                        genre.append(chunk.at[f,ind])
-                    elif g == 6:
-                        link.append(chunk.at[f,ind])
-                    elif g == 7:
-                        des.append(chunk.at[f,ind])
-                    elif g == 8:
-                        year.append(chunk.at[f,ind])
-                    elif g == 9:
-                        nump.append(chunk.at[f,ind])
-                    elif g ==10:
-                        rate_av.append(chunk.at[f,ind])
-                    elif g ==11:
-                        rate_co.append(chunk.at[f,ind])
                     book.append(chunk.at[f,ind])
                     #add a dictionary function 
                     #where you can store every score to a list or the isbns to the list itself.
@@ -167,14 +129,78 @@ def read():
                 ranking.append(points)
                 book.append(points)
                 books.append(book)
+                diction[f] = book
+                diction2[f] = points
                 f += 1
+        ranked = sorted(diction2.items(), key=lambda x: x[1], reverse=True)
+        results(diction,ranked)
             
+def results(diction,ranked):
+    print("Here are you're Book recommendations")
+    print()
+    k = 0
+    a = 1
+    y = 10
+    y,k = page(y,ranked,diction,k)
+    b = input()
+    b = b.strip()
+    list = ["1","2","3","4","5","6","7","8","9","10","next","back"]
+    if b in list:
+         b = b.lower()
+         if b == "next" or b == "back":
+              pass   
+         else:
+              b = int(b)
+              b -= 1
+              book_info(diction,ranked,b)
+    else:
+        print("Input is not handled please try again.")
+        results(diction,ranked)
 
-    def show(diction):
+def page(y,ranked,diction,k):
+    for i in range(k,y):
+        r = []
+        a = str(ranked[i])
+        a = a.replace("(","")
+        a = a.replace(")","")
+        e = a.split(",")
+        r = [s.strip() for s in e]
+        if y > 10:
+             p = "or back"
+        else:
+             p = " "
+        o = int(r[0])
+        diction[int(r[0])]
+        title = diction[o][2]
+        print(str(i+1)+": "+title)
+        print(r[0])
+        print(r[1])
+    print("next "+p)
+    print("Insert a number "+str(k)+"-"+str(y)+" to learn more about each book.")
+    k += 10
+    y += 10
+    return y,k
 
-         print("Here are youre Book recommendations")
-         t = len(isbns)
-         a = 1
+def book_info(diction,ranked, an):
+     r = []
+     a = str(ranked[an])
+     a = a.replace("(","")
+     a = a.replace(")","")
+     e = a.split(",")
+     r = [s.strip() for s in e]
+     o = int(r[0])
+     print(str(ranked[1]))
+     print("Isbn: "+str(diction[o][0]))
+     print("Title: "+str(diction[o][2])+" "+str(diction[o][3]))
+     print("Author: "+diction[o][4])
+     print("Genres:"+diction[o][5])
+     print("Description: "+diction[o][7])
+     print("publish year: "+str(diction[o][8]))
+     print("Average Rating: "+str(diction[o][9]))
+     print("Number of Ratings: "+str(diction[o][10]))
+     print("Number of pages: "+str(diction[o][11]))
+
 print("<Welcome to the magnificent book finder.>")
 print("<How can we Help you today?>") 
 
+start()
