@@ -36,9 +36,8 @@ def prefrence():
     b = ""
     c = ""
     d = ""
-    print("Out of these options of genre which are you're favorite to read?")
-    print("fantasy, adventure, fiction, nonfiction, mystery, sci-fi, history")
-    print("Please write out done, if youre selection is complete. Please write your choices 1 at a time.")
+    print("Insert Book genres you like!")
+    print("Please write out done, if you're selection is complete. Please write your choices 1 at a time.")
     while b != "done":
         b = input()
         l += 1
@@ -106,7 +105,8 @@ def read():
     with pd.read_csv("data/books.csv",iterator=True,chunksize=6) as reader:
         diction = {}
         diction2 = {}
-        listid = ["isbn13","isbn10","title","subtitle","authors","categories","thumbnail","description","published_year","average_rating","num_pages","ratings_count"]
+        listid = ["isbn13","isbn10","title","subtitle","authors","categories","thumbnail","description",
+                  "published_year","average_rating","num_pages","ratings_count"]
         nc = 0
         f = 0
         t = len(listid)
@@ -122,8 +122,6 @@ def read():
                         g = 0
                     ind = listid[g]
                     book.append(chunk.at[f,ind])
-                    #add a dictionary function 
-                    #where you can store every score to a list or the isbns to the list itself.
                     g += 1
                 points= score(book,listid,listgen,listauth,listrate,listyear,listread)
                 ranking.append(points)
@@ -153,6 +151,17 @@ def results(diction,ranked):
               b = int(b)
               b -= 1
               book_info(diction,ranked,b)
+              print("Put done or contiune")
+              i = input()
+              i = i.strip()
+              i = i.lower()
+              if i == "done":
+                   exit()
+              elif i == "continue":
+                   results(diction,ranked)
+              else:
+                   print("unhandled input, trying again.")
+                   results(diction,ranked)
     else:
         print("Input is not handled please try again.")
         results(diction,ranked)
@@ -173,8 +182,6 @@ def page(y,ranked,diction,k):
         diction[int(r[0])]
         title = diction[o][2]
         print(str(i+1)+": "+title)
-        print(r[0])
-        print(r[1])
     print("next "+p)
     print("Insert a number "+str(k)+"-"+str(y)+" to learn more about each book.")
     k += 10
@@ -189,7 +196,6 @@ def book_info(diction,ranked, an):
      e = a.split(",")
      r = [s.strip() for s in e]
      o = int(r[0])
-     print(str(ranked[1]))
      print("Isbn: "+str(diction[o][0]))
      print("Title: "+str(diction[o][2])+" "+str(diction[o][3]))
      print("Author: "+diction[o][4])
