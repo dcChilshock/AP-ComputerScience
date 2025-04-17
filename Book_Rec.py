@@ -1,9 +1,8 @@
 import pandas as pd
-import numpy as np 
 
 listgen = ["fantasy","fiction","science fiction"]
 listauth = ["Janny Wurts"]
-listrate = ["3"]
+listrate = ["4"]
 listread = ["spider's web"]
 listyear = ["2000"]
 
@@ -17,6 +16,14 @@ def start():
     answer.lower()
     if answer.strip() == "start":
         l1,l2,l3,l4 = prefrence()
+        for i in range(0,len(l4)):
+            listgen.append(l4[i])
+        for i in range(0,len(l1)):
+            listauth.append(l1[i])
+        for i in range(0,len(l3)):
+            listyear.append(l3[i])
+        for i in range(0,len(l2)):
+            listread.append(l2[i])
         read()
     elif answer.strip() == "all ready":
          pass
@@ -58,18 +65,15 @@ def prefrence():
         d.lower()
         d.strip()
         lista.append(d)
-    
+
     print("Prefrence to the date a book was published?")
     r = input()
     if r =="yes":
-        print("Input your prefrence as m/d/year (The date inputed will exclude all books before this date)")
+        print("Input your prefrence as m/d/year (The date inputed will essentially exclude all books before this date)")
         f = input()
-        f.strip
+        f.strip()
         listy.append(f)
     return lista,listb,listy,listg
-
-def recommend(a,b,c,d):
-    df = pd.read_csv("data/books.csv",header=0,nrows=1000)
 
 def score(book,listid,listgen,listauth,listrate,listyear,listread):
     rt = {}
@@ -77,29 +81,35 @@ def score(book,listid,listgen,listauth,listrate,listyear,listread):
     r = len(listid)
     score = 1000
     ly = int(listyear[0])
-    if book[5] in listgen:
-            score += 250
-    else:
-        score -= 100
-    if book[4] in listauth:
-        score += 100
-    else:
-            score -= 50
-    if float(book[8]) < ly:
-            score -= 100
-    else:
-            score += 100
-    if float(book[9]) >= int(listrate[0]):
-            score += 150
-    else:
-            score -= 150
-    if book[2] in listread:
-            score -= 500
-    else:
-            score += 150
-    for x in range(0,t):
-         pass
-    return score
+    for i in range(0,len(book)):
+        if i == 5:
+            if book[i] in listgen:
+                for x in range(0,listgen):
+                     if book[i] in listgen[x]:
+                          score += 250
+            else:
+                score -= 100
+        if i == 4:
+            if book[i] in listauth:
+                score += 100
+            else:
+                    score -= 50
+        if i == 8:
+            if float(book[i]) < ly:
+                    score -= 100
+            else:
+                    score += 100
+        if i == 9:
+            if float(book[i]) >= int(listrate[0]):
+                    score += 150
+            else:
+                    score -= 150
+        if i == 2:
+            if book[i] in listread:
+                    score -= 500
+            else:
+                    score += 150
+        return score
 
 def read():
     with pd.read_csv("data/books.csv",iterator=True,chunksize=6) as reader:
@@ -132,21 +142,28 @@ def read():
                 f += 1
         ranked = sorted(diction2.items(), key=lambda x: x[1], reverse=True)
         results(diction,ranked)
-            
+
 def results(diction,ranked):
     print("Here are you're Book recommendations")
     print()
     k = 0
     a = 1
     y = 10
-    y,k = page(y,ranked,diction,k)
+    page(y,ranked,diction,k)
     b = input()
     b = b.strip()
     list = ["1","2","3","4","5","6","7","8","9","10","next","back"]
     if b in list:
          b = b.lower()
          if b == "next" or b == "back":
-              pass   
+             if b =="next":
+                 y += 10
+                 k += 10
+                 page(y,ranked,diction,k)
+             elif b == "back":
+                 y -= 10
+                 k -= 10
+                 page(y,ranked,diction,k)
          else:
               b = int(b)
               b -= 1
@@ -179,14 +196,10 @@ def page(y,ranked,diction,k):
         else:
              p = " "
         o = int(r[0])
-        diction[int(r[0])]
         title = diction[o][2]
         print(str(i+1)+": "+title)
     print("next "+p)
     print("Insert a number "+str(k)+"-"+str(y)+" to learn more about each book.")
-    k += 10
-    y += 10
-    return y,k
 
 def book_info(diction,ranked, an):
      r = []
@@ -207,6 +220,6 @@ def book_info(diction,ranked, an):
      print("Number of pages: "+str(diction[o][11]))
 
 print("<Welcome to the magnificent book finder.>")
-print("<How can we Help you today?>") 
+print("<How can we Help you today?>")
 
 start()
