@@ -1,11 +1,13 @@
 .data
 msg_sum: .asciiz "The sum of the 2 numbers is: "
-msg_diff: .asciiz "\nThe differnce of the 2 numbers is:"
+msg_diff: .asciiz "\nThe differnce of the 2 numbers is: "
 .text
 main:
-	li $t0,10
+	li $t0,10 #assigns numbers
 	li $t1,20
-	add $t2,$t0,$t1 #t3 = t0 + t1
+	add $t2,$t0,$t1 #t3 = t0(10) + t1(20)
+	sub $t3,$t0,$t1
+
 	la $a0,msg_sum
 	li $v0,4
 	syscall 
@@ -14,9 +16,7 @@ main:
 	li $v0,1
 	syscall
 	
-	sub $t3,$t0,$t1
-	
-	la $a1,msg_diff
+	la $a0,msg_diff
 	li $v0,4
 	syscall 
 	
@@ -24,6 +24,6 @@ main:
 	li $v0,1
 	syscall
 exit:
-	li $v0,10
+	li $v0,10 #exit
 	syscall
 	
