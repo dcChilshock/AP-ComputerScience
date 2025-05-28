@@ -34,7 +34,7 @@ main:
 	move $a0,$t0
 	li $v0,1
 	syscall  
-	bne $t0,$s0,lose 
+	bne $t0,$s0,lose
 win:
 	la $a0,prtwin
 	li $v0,4
